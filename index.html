@@ -2,416 +2,746 @@
 <html lang="ru">
 <head>
 <meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Футбольный журнал · 1–4 ноября 2026</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,700;0,800;1,500;1,700&family=Source+Serif+4:ital,opsz,wght@0,8..60,400;0,8..60,600;0,8..60,700;1,8..60,400;1,8..60,600&display=swap" rel="stylesheet">
 <style>
   :root {
-    --ink: #0e1116;
-    --ink-2: #161b22;
-    --ink-3: #1f2630;
-    --paper: #f4efe6;
-    --paper-dim: #e7dfd2;
-    --gold: #d4a017;
-    --gold-soft: #f0d78c;
-    --crimson: #c8102e;
-    --cream: #faf7f1;
-    --muted: #8b93a1;
-    --line: rgba(244,239,230,.12);
-    --accent: #e8b923;
-    --shadow: 0 12px 40px rgba(0,0,0,.35);
-    --radius: 10px;
-    --safe-x: max(16px, env(safe-area-inset-left));
-    --safe-r: max(16px, env(safe-area-inset-right));
-    --safe-b: max(24px, env(safe-area-inset-bottom));
+    --ink: #120e0c;
+    --ink-soft: #1c1612;
+    --paper: #f3ebe0;
+    --paper-2: #e8ddd0;
+    --cream: #faf6ef;
+    --muted: #9a8f84;
+    --crimson: #b70e28;
+    --crimson-deep: #7a0a1a;
+    --gold: #c9a227;
+    --gold-soft: #e6d3a0;
+    --line: rgba(243,235,224,.14);
+    --line-strong: rgba(243,235,224,.28);
+    --safe-x: max(18px, env(safe-area-inset-left));
+    --safe-r: max(18px, env(safe-area-inset-right));
+    --safe-b: max(28px, env(safe-area-inset-bottom));
+    --display: "Playfair Display", "Times New Roman", serif;
+    --body: "Source Serif 4", "Georgia", serif;
+    --ui: "Manrope", system-ui, sans-serif;
   }
+
   * { box-sizing: border-box; margin: 0; padding: 0; }
   html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
   body {
-    font-family: "Georgia", "Times New Roman", "Liberation Serif", serif;
-    background:
-      radial-gradient(ellipse 80% 40% at 50% -10%, rgba(200,16,46,.12), transparent 50%),
-      var(--ink);
+    font-family: var(--body);
     color: var(--paper);
-    line-height: 1.55;
+    line-height: 1.6;
+    background-color: var(--ink);
+    background-image:
+      radial-gradient(ellipse 90% 50% at 10% -10%, rgba(183,14,40,.22), transparent 55%),
+      radial-gradient(ellipse 60% 40% at 100% 20%, rgba(201,162,39,.08), transparent 45%),
+      linear-gradient(180deg, #16110e 0%, var(--ink) 18%, var(--ink) 100%);
     -webkit-font-smoothing: antialiased;
-    padding-left: env(safe-area-inset-left);
-    padding-right: env(safe-area-inset-right);
     padding-bottom: env(safe-area-inset-bottom);
   }
-  .sans {
-    font-family: "Helvetica Neue", Helvetica, Arial, "Segoe UI", sans-serif;
-    letter-spacing: .02em;
+  body::before {
+    content: "";
+    pointer-events: none;
+    position: fixed; inset: 0; z-index: 100;
+    opacity: .045;
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    mix-blend-mode: soft-light;
   }
   img { max-width: 100%; display: block; }
+  strong { font-weight: 700; color: var(--cream); }
   a {
     color: var(--gold-soft);
     text-decoration: none;
-    border-bottom: 1px solid rgba(240,215,140,.35);
-    transition: color .2s ease, border-color .2s ease;
+    background-image: linear-gradient(currentColor, currentColor);
+    background-position: 0 100%;
+    background-repeat: no-repeat;
+    background-size: 100% 1px;
+    transition: color .2s ease, background-size .2s ease;
   }
-  a:hover { color: #fff; border-bottom-color: #fff; }
-  a:focus-visible {
-    outline: 2px solid var(--gold);
-    outline-offset: 3px;
-    border-radius: 2px;
-  }
+  a:hover { color: #fff; background-size: 100% 2px; }
+  a:focus-visible { outline: 2px solid var(--gold); outline-offset: 3px; }
 
-  /* Masthead */
+  .ui { font-family: var(--ui); letter-spacing: .02em; }
+
+  /* ——— Masthead ——— */
   .masthead {
-    border-bottom: 1px solid var(--line);
-    padding: 16px max(20px, var(--safe-x));
-    padding-top: max(16px, env(safe-area-inset-top));
-    display: flex; align-items: center; justify-content: space-between;
-    gap: 12px; flex-wrap: wrap;
-    background: linear-gradient(180deg, #141820, var(--ink));
-    position: sticky; top: 0; z-index: 20;
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
-    background: linear-gradient(180deg, rgba(20,24,32,.92), rgba(14,17,22,.88));
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    align-items: end;
+    gap: 12px;
+    padding: max(14px, env(safe-area-inset-top)) max(22px, var(--safe-x)) 14px;
+    border-bottom: 3px solid var(--paper);
+    position: relative;
+    z-index: 5;
   }
   .masthead .brand {
-    font-size: 12px; text-transform: uppercase; letter-spacing: .28em;
-    color: var(--gold); font-weight: 700;
+    font-family: var(--display);
+    font-weight: 800;
+    font-size: clamp(1.35rem, 4vw, 1.85rem);
+    line-height: 1;
+    letter-spacing: -.02em;
+    color: var(--paper);
+  }
+  .masthead .brand span {
+    display: block;
+    font-family: var(--ui);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .42em;
+    text-transform: uppercase;
+    color: var(--crimson);
+    margin-bottom: 6px;
   }
   .masthead .issue {
-    font-size: 11px; color: var(--muted); letter-spacing: .06em;
+    text-align: right;
+    font-size: 11px;
+    font-weight: 600;
+    color: var(--muted);
+    line-height: 1.45;
+    align-self: center;
   }
-  .masthead .dot { color: var(--crimson); margin: 0 8px; }
+  .masthead .issue b { color: var(--paper-2); font-weight: 700; }
+  .masthead .mark {
+    width: 42px; height: 42px;
+    border: 2px solid var(--crimson);
+    border-radius: 50%;
+    display: grid; place-items: center;
+    font-family: var(--display);
+    font-style: italic;
+    font-weight: 700;
+    color: var(--crimson);
+    font-size: 1.1rem;
+    justify-self: center;
+  }
 
-  /* Hero */
-  .hero {
+  /* ——— Cover / Hero ——— */
+  .cover {
+    position: relative;
+    min-height: min(88vh, 820px);
     display: grid;
-    grid-template-columns: 1.05fr .95fr;
-    min-height: 72vh;
+    grid-template-columns: 1.15fr .85fr;
     border-bottom: 1px solid var(--line);
+    overflow: hidden;
   }
-  .hero-photo {
-    position: relative; overflow: hidden; background: #000;
-    min-height: 420px;
+  .cover-photo {
+    position: relative;
+    min-height: 480px;
+    background: #000;
   }
-  .hero-photo img {
-    width: 100%; height: 100%; object-fit: cover; object-position: center top;
-    filter: contrast(1.05) saturate(1.05);
+  .cover-photo img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    object-position: 55% 12%;
+    filter: contrast(1.08) saturate(.92) brightness(.92);
+    transform: scale(1.04);
   }
-  .hero-photo::after {
-    content: ""; position: absolute; inset: 0;
-    background: linear-gradient(90deg, transparent 55%, var(--ink) 100%),
-                linear-gradient(0deg, rgba(14,17,22,.55), transparent 40%);
-    pointer-events: none;
-  }
-  .hero-photo .credit {
-    position: absolute; left: 16px; bottom: 14px; z-index: 2;
-    font-size: 10px; color: rgba(244,239,230,.65); letter-spacing: .04em;
-    max-width: calc(100% - 32px);
-  }
-  .hero-copy {
-    padding: 48px 40px 40px 32px;
-    display: flex; flex-direction: column; justify-content: center;
+  .cover-photo::after {
+    content: "";
+    position: absolute; inset: 0;
     background:
-      radial-gradient(ellipse at 80% 0%, rgba(200,16,46,.18), transparent 55%),
-      var(--ink);
+      linear-gradient(90deg, transparent 40%, rgba(18,14,12,.55) 78%, var(--ink) 100%),
+      linear-gradient(0deg, rgba(18,14,12,.75) 0%, transparent 42%),
+      linear-gradient(180deg, rgba(18,14,12,.25), transparent 30%);
+  }
+  .cover-photo .credit {
+    position: absolute; left: 16px; bottom: 14px; z-index: 3;
+    font-size: 10px; color: rgba(243,235,224,.55);
+    max-width: 70%;
+  }
+  .cover-copy {
+    position: relative;
+    z-index: 2;
+    padding: 48px 36px 40px 8px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-left: -12%;
   }
   .kicker {
-    font-size: 12px; text-transform: uppercase; letter-spacing: .32em;
-    color: var(--crimson); font-weight: 700; margin-bottom: 18px;
-  }
-  .hero h1 {
-    font-size: clamp(2.2rem, 5vw, 3.8rem);
-    line-height: 1.05; font-weight: 700;
-    letter-spacing: -.02em;
+    font-family: var(--ui);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: .28em;
+    text-transform: uppercase;
+    color: var(--crimson);
     margin-bottom: 18px;
+    display: flex; align-items: center; gap: 12px;
+  }
+  .kicker::before {
+    content: "";
+    width: 28px; height: 2px;
+    background: var(--crimson);
+  }
+  .cover h1 {
+    font-family: var(--display);
+    font-weight: 800;
+    font-size: clamp(2.6rem, 6.2vw, 4.6rem);
+    line-height: .92;
+    letter-spacing: -.03em;
+    margin-bottom: 22px;
     text-wrap: balance;
   }
-  .hero h1 em {
-    font-style: italic; color: var(--gold-soft); font-weight: 500;
+  .cover h1 em {
+    font-style: italic;
+    font-weight: 500;
+    color: var(--gold-soft);
   }
-  .hero-lead {
-    font-size: 1.12rem; color: var(--paper-dim); max-width: 36ch;
+  .cover-lead {
+    font-size: clamp(1.05rem, 1.6vw, 1.22rem);
+    color: var(--paper-2);
+    max-width: 34ch;
     margin-bottom: 28px;
+    font-weight: 400;
   }
-  .score-pill {
-    display: inline-flex; align-items: center; gap: 12px;
-    background: var(--ink-3); border: 1px solid var(--line);
-    padding: 12px 18px; border-radius: 999px;
-    font-size: 14px;
-    box-shadow: var(--shadow);
-    min-height: 48px;
+  .scoreboard {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 0 18px;
+    align-items: center;
+    max-width: 360px;
+    border-top: 1px solid var(--line-strong);
+    border-bottom: 1px solid var(--line-strong);
+    padding: 14px 0;
   }
-  .score-pill strong {
-    font-size: 1.35rem; color: var(--gold); letter-spacing: .04em;
+  .scoreboard .score {
+    font-family: var(--display);
+    font-weight: 800;
+    font-size: 2.6rem;
+    line-height: 1;
+    color: var(--gold);
+    letter-spacing: -.02em;
   }
-  .score-pill span.teams { color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: .08em; }
+  .scoreboard .meta {
+    font-family: var(--ui);
+    font-size: 12px;
+    line-height: 1.45;
+    color: var(--muted);
+  }
+  .scoreboard .meta b {
+    display: block;
+    color: var(--paper);
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+    margin-bottom: 2px;
+  }
 
-  /* Pull quote */
+  /* ——— Pull quote ——— */
   .pull {
     margin: 0;
-    padding: 36px 40px;
+    padding: 48px max(28px, var(--safe-x)) 44px;
     background:
-      linear-gradient(135deg, rgba(212,160,23,.06), transparent 40%),
-      var(--ink-2);
-    border-left: 4px solid var(--gold);
+      linear-gradient(90deg, var(--crimson-deep), var(--crimson) 42%, transparent 42%),
+      var(--ink-soft);
     border-bottom: 1px solid var(--line);
+    position: relative;
+  }
+  .pull::before {
+    content: "«";
+    font-family: var(--display);
+    font-size: clamp(5rem, 14vw, 8rem);
+    line-height: .7;
+    color: var(--gold);
+    opacity: .35;
+    position: absolute;
+    top: 18px; left: max(12px, var(--safe-x));
+    pointer-events: none;
   }
   .pull blockquote {
-    font-size: clamp(1.2rem, 2.4vw, 1.75rem);
-    font-style: italic; line-height: 1.35;
-    max-width: 50ch;
+    position: relative;
+    z-index: 1;
+    font-family: var(--display);
+    font-style: italic;
+    font-weight: 500;
+    font-size: clamp(1.35rem, 3vw, 2.05rem);
+    line-height: 1.25;
+    max-width: 28ch;
+    margin-left: clamp(28px, 8vw, 72px);
   }
   .pull cite {
-    display: block; margin-top: 14px;
-    font-size: 12px; font-style: normal; letter-spacing: .18em;
-    text-transform: uppercase; color: var(--gold);
+    display: block;
+    margin: 18px 0 0 clamp(28px, 8vw, 72px);
+    font-family: var(--ui);
+    font-style: normal;
+    font-size: 12px;
+    font-weight: 700;
+    letter-spacing: .22em;
+    text-transform: uppercase;
+    color: var(--gold);
   }
 
-  /* Layout */
+  /* ——— Sections ——— */
   .wrap {
-    max-width: 1120px; margin: 0 auto;
-    padding: 0 max(24px, var(--safe-x));
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 0 max(22px, var(--safe-x));
   }
-  section.block {
-    padding: 56px 0 24px;
+  .block {
+    padding: 64px 0 36px;
     border-bottom: 1px solid var(--line);
+    position: relative;
+  }
+  .sec-head {
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 16px 22px;
+    align-items: end;
+    margin-bottom: 34px;
+  }
+  .sec-num {
+    font-family: var(--display);
+    font-style: italic;
+    font-weight: 700;
+    font-size: 3.2rem;
+    line-height: .8;
+    color: var(--crimson);
+    opacity: .85;
   }
   .sec-label {
-    font-size: 11px; text-transform: uppercase; letter-spacing: .3em;
-    color: var(--gold); margin-bottom: 10px; font-weight: 700;
+    font-family: var(--ui);
+    font-size: 11px;
+    font-weight: 800;
+    letter-spacing: .28em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 8px;
   }
   .sec-title {
-    font-size: clamp(1.65rem, 3vw, 2.4rem);
-    margin-bottom: 28px; letter-spacing: -.015em;
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: clamp(1.85rem, 3.4vw, 2.65rem);
+    line-height: 1.05;
+    letter-spacing: -.02em;
     text-wrap: balance;
   }
 
-  /* Feature cards */
-  .feature {
-    display: grid; grid-template-columns: 280px 1fr; gap: 28px;
-    background: var(--ink-2); border: 1px solid var(--line);
-    border-radius: var(--radius); overflow: hidden; margin-bottom: 24px;
-    box-shadow: 0 8px 28px rgba(0,0,0,.22);
-    transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+  /* ——— Feature story (asymmetric, not a card) ——— */
+  .story {
+    display: grid;
+    grid-template-columns: minmax(0, .92fr) minmax(0, 1.08fr);
+    gap: 0 40px;
+    align-items: start;
   }
-  .feature.alt { grid-template-columns: 1fr 280px; }
-  .feature.alt .f-photo { order: 2; }
-  .f-photo { position: relative; min-height: 320px; background: #000; }
-  .f-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
-  .f-body { padding: 28px 28px 28px 8px; }
-  .feature.alt .f-body { padding: 28px 8px 28px 28px; }
-  .f-body h3 {
-    font-size: 1.65rem; margin-bottom: 6px;
+  .story.flip { grid-template-columns: minmax(0, 1.08fr) minmax(0, .92fr); }
+  .story.flip .story-photo { order: 2; }
+  .story-photo {
+    position: relative;
+    margin: 0 -8px 0 calc(-1 * max(22px, var(--safe-x)));
+    min-height: 420px;
+    background: #0a0807;
   }
-  .f-meta {
-    font-size: 12px; color: var(--muted); text-transform: uppercase;
-    letter-spacing: .14em; margin-bottom: 16px;
+  .story.flip .story-photo {
+    margin: 0 calc(-1 * max(22px, var(--safe-x))) 0 -8px;
   }
-  .f-body p { color: var(--paper-dim); margin-bottom: 12px; font-size: 1.02rem; }
-  .stats {
-    display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px;
+  .story-photo img {
+    width: 100%; height: 100%;
+    min-height: 420px;
+    object-fit: cover;
+    object-position: center top;
+    filter: contrast(1.06) saturate(.95);
   }
-  .stat {
-    background: var(--ink-3); border: 1px solid var(--line);
-    padding: 12px 14px; border-radius: 8px; min-width: 88px;
-    min-height: 56px;
+  .story-photo::after {
+    content: "";
+    position: absolute; inset: 0;
+    box-shadow: inset 0 0 0 1px rgba(243,235,224,.08);
+    pointer-events: none;
   }
-  .stat b { display: block; font-size: 1.25rem; color: var(--gold); line-height: 1.1; }
-  .stat small { font-size: 10px; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); }
-
-  /* Player grid */
-  .grid-3 {
-    display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px;
+  .story-body { padding-top: 8px; }
+  .story-body h3 {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: clamp(1.7rem, 2.8vw, 2.25rem);
+    line-height: 1.1;
+    margin-bottom: 8px;
+    letter-spacing: -.015em;
   }
-  .grid-2 {
-    display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px;
+  .story-meta {
+    font-family: var(--ui);
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 18px;
+    padding-bottom: 14px;
+    border-bottom: 1px solid var(--line);
   }
-  .card {
-    background: var(--ink-2); border: 1px solid var(--line);
-    border-radius: var(--radius); overflow: hidden;
-    display: flex; flex-direction: column;
-    box-shadow: 0 6px 20px rgba(0,0,0,.18);
-    transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+  .story-body p {
+    color: var(--paper-2);
+    font-size: 1.05rem;
+    margin-bottom: 14px;
+    max-width: 42ch;
   }
-  .card .thumb {
-    height: 200px; background: #111; position: relative; overflow: hidden;
-  }
-  .card .thumb img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
-  .card .thumb.placeholder {
-    display: flex; align-items: center; justify-content: center;
-    background: linear-gradient(135deg, #1a2030, #2a1520);
-    font-size: 42px; color: var(--gold); font-weight: 700;
-  }
-  .card .body { padding: 18px 18px 22px; flex: 1; }
-  .card h4 { font-size: 1.15rem; margin-bottom: 4px; }
-  .card .club { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: .12em; margin-bottom: 10px; }
-  .card p { font-size: .95rem; color: var(--paper-dim); }
-
-  @media (hover: hover) and (pointer: fine) {
-    .feature:hover, .card:hover {
-      transform: translateY(-3px);
-      border-color: rgba(240,215,140,.28);
-      box-shadow: 0 16px 36px rgba(0,0,0,.4);
-    }
-    .score-card:hover {
-      border-color: rgba(240,215,140,.25);
-      background: #252c38;
-    }
+  .story-body p:first-of-type::first-letter {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 3.4rem;
+    float: left;
+    line-height: .78;
+    padding: 8px 10px 0 0;
+    color: var(--gold);
   }
 
-  /* Tables */
-  .table-wrap {
-    overflow-x: auto; margin: 12px 0 8px;
-    -webkit-overflow-scrolling: touch;
-    border: 1px solid var(--line);
-    border-radius: var(--radius);
-    background: var(--ink-2);
+  .statline {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(88px, 1fr));
+    gap: 0;
+    margin: 26px 0 8px;
+    border-top: 1px solid var(--line-strong);
+    border-bottom: 1px solid var(--line-strong);
   }
-  table.standings {
-    width: 100%; border-collapse: collapse; font-size: 14px;
-    min-width: 320px;
+  .statline > div {
+    padding: 16px 12px 16px 0;
+    border-right: 1px solid var(--line);
   }
-  table.standings th, table.standings td {
-    text-align: left; padding: 12px 14px; border-bottom: 1px solid var(--line);
+  .statline > div:last-child { border-right: none; }
+  .statline b {
+    display: block;
+    font-family: var(--display);
+    font-weight: 800;
+    font-size: 1.85rem;
+    line-height: 1;
+    color: var(--gold);
+    letter-spacing: -.02em;
   }
-  table.standings tbody tr:last-child td { border-bottom: none; }
-  table.standings th {
-    font-size: 11px; text-transform: uppercase; letter-spacing: .14em;
-    color: var(--muted); font-weight: 600;
-    background: rgba(0,0,0,.2);
-    position: sticky; top: 0;
+  .statline small {
+    display: block;
+    margin-top: 6px;
+    font-family: var(--ui);
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: .12em;
+    text-transform: uppercase;
+    color: var(--muted);
   }
-  table.standings tr:hover td { background: rgba(255,255,255,.03); }
-  table.standings .hi { color: var(--gold); font-weight: 700; }
-  table.standings .dim { color: var(--muted); }
-
-  /* Mini scores */
-  .scores {
-    display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-    gap: 12px; margin-top: 8px;
-  }
-  .score-card {
-    background: var(--ink-3); border: 1px solid var(--line);
-    border-radius: 8px; padding: 16px 16px;
-    min-height: 88px;
-    transition: border-color .2s ease, background .2s ease;
-  }
-  .score-card .comp {
-    font-size: 10px; text-transform: uppercase; letter-spacing: .16em;
-    color: var(--gold); margin-bottom: 6px;
-  }
-  .score-card .line {
-    display: flex; justify-content: space-between; align-items: baseline;
-    gap: 12px; font-size: 1rem;
-  }
-  .score-card .res {
-    font-weight: 700; color: var(--cream); font-size: 1.2rem; letter-spacing: .04em;
-    white-space: nowrap;
-  }
-
-  /* Sources / footer */
-  .sources {
-    padding: 40px 0 max(60px, var(--safe-b));
-  }
-  .sources ul { list-style: none; }
-  .sources li {
-    margin: 10px 0; font-size: 14px; color: var(--paper-dim);
+  .fixture {
+    margin-top: 20px;
+    font-family: var(--ui);
+    font-size: 13px;
+    color: var(--paper-2);
+    padding-left: 14px;
+    border-left: 3px solid var(--crimson);
     line-height: 1.45;
   }
-  .sources li::before { content: "▸ "; color: var(--gold); }
-  .sources a {
-    display: inline;
-    padding: 2px 0;
+  .fixture b { color: var(--gold-soft); font-weight: 700; }
+
+  /* ——— Legionnaires: magazine columns, not card grid ——— */
+  .dossier {
+    display: grid;
+    grid-template-columns: 1.15fr .95fr .95fr;
+    gap: 28px 26px;
+    align-items: start;
   }
+  .dossier-lead {
+    grid-row: 1 / span 2;
+    border-right: 1px solid var(--line);
+    padding-right: 22px;
+  }
+  .dossier-lead .portrait {
+    position: relative;
+    height: 340px;
+    margin: 0 0 18px;
+    overflow: hidden;
+    background: #0a0807;
+  }
+  .dossier-lead .portrait img {
+    width: 100%; height: 100%;
+    object-fit: cover;
+    object-position: center top;
+    filter: contrast(1.05) grayscale(.15);
+  }
+  .dossier-lead .portrait::after {
+    content: "";
+    position: absolute; inset: 0;
+    background: linear-gradient(0deg, rgba(18,14,12,.7), transparent 40%);
+  }
+  .dossier h4 {
+    font-family: var(--display);
+    font-weight: 700;
+    font-size: 1.45rem;
+    line-height: 1.1;
+    margin-bottom: 6px;
+  }
+  .dossier .club {
+    font-family: var(--ui);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .16em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 12px;
+  }
+  .dossier p {
+    color: var(--paper-2);
+    font-size: .98rem;
+  }
+  .dossier-item {
+    padding-bottom: 22px;
+    border-bottom: 1px solid var(--line);
+  }
+  .dossier-item:last-child { border-bottom: none; padding-bottom: 0; }
+  .mono-mark {
+    font-family: var(--display);
+    font-style: italic;
+    font-weight: 700;
+    font-size: 2rem;
+    color: var(--crimson);
+    opacity: .55;
+    line-height: 1;
+    margin-bottom: 8px;
+  }
+
+  /* ——— Scores strip ——— */
+  .wire {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0;
+    margin-top: 28px;
+    border-top: 2px solid var(--paper);
+    border-bottom: 2px solid var(--paper);
+  }
+  .wire-item {
+    padding: 18px 20px 18px 0;
+  }
+  .wire-item + .wire-item {
+    border-left: 1px solid var(--line);
+    padding-left: 20px;
+  }
+  .wire .comp {
+    font-family: var(--ui);
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    color: var(--crimson);
+    margin-bottom: 8px;
+  }
+  .wire .line {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+    gap: 12px;
+    font-family: var(--ui);
+    font-size: 1rem;
+    font-weight: 600;
+  }
+  .wire .res {
+    font-family: var(--display);
+    font-weight: 800;
+    font-size: 1.55rem;
+    color: var(--cream);
+    letter-spacing: -.02em;
+    white-space: nowrap;
+  }
+  .wire .note {
+    margin-top: 8px;
+    font-family: var(--ui);
+    font-size: 12px;
+    color: var(--muted);
+  }
+
+  /* ——— Standings ——— */
+  .table-wrap {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+    margin-top: 8px;
+  }
+  table.standings {
+    width: 100%;
+    border-collapse: collapse;
+    min-width: 320px;
+    font-family: var(--ui);
+    font-size: 14px;
+  }
+  table.standings th,
+  table.standings td {
+    text-align: left;
+    padding: 14px 10px;
+    border-bottom: 1px solid var(--line);
+  }
+  table.standings th {
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    color: var(--muted);
+    border-bottom: 2px solid var(--paper);
+  }
+  table.standings td:first-child,
+  table.standings th:first-child {
+    font-family: var(--display);
+    font-weight: 700;
+    width: 2.5rem;
+  }
+  table.standings .hi { color: var(--gold); font-weight: 800; }
+  table.standings .dim { color: var(--muted); }
+  table.standings tbody tr:last-child td { border-bottom: none; }
+
+  /* ——— Sources ——— */
+  .sources {
+    padding: 56px 0 max(64px, var(--safe-b));
+  }
+  .sources ul {
+    list-style: none;
+    max-width: 52ch;
+  }
+  .sources li {
+    font-family: var(--ui);
+    font-size: 14px;
+    margin: 0;
+    padding: 14px 0;
+    border-bottom: 1px solid var(--line);
+    color: var(--paper-2);
+    line-height: 1.4;
+  }
+  .sources li::before {
+    content: "→ ";
+    color: var(--crimson);
+    font-weight: 700;
+  }
+  .photo-credits {
+    margin-top: 28px;
+    font-family: var(--ui);
+    font-size: 12px;
+    color: var(--muted);
+    max-width: 62ch;
+    line-height: 1.5;
+  }
+
   footer.colophon {
-    border-top: 1px solid var(--line);
-    padding: 22px max(24px, var(--safe-x)) max(40px, var(--safe-b));
-    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px;
-    font-size: 11px; color: var(--muted); letter-spacing: .06em;
+    border-top: 3px solid var(--paper);
+    padding: 20px max(22px, var(--safe-x)) max(36px, var(--safe-b));
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 10px;
+    font-family: var(--ui);
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--muted);
   }
 
-  /* Decorative rule */
-  .rule {
-    height: 1px; background: linear-gradient(90deg, var(--gold), transparent 70%);
-    margin: 8px 0 20px; max-width: 180px;
-  }
-
-  /* Next fixtures strip */
-  .next-strip {
-    display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px;
-  }
-  .chip {
-    border: 1px solid var(--line); background: rgba(255,255,255,.03);
-    padding: 10px 14px; border-radius: 999px; font-size: 12px; color: var(--paper-dim);
-    line-height: 1.35; min-height: 40px;
-    display: inline-flex; align-items: center;
-  }
-  .chip b { color: var(--gold-soft); font-weight: 600; }
-
-  /* Tablet / phone: hero one column */
-  @media (max-width: 720px) {
-    .hero { grid-template-columns: 1fr; min-height: auto; }
-    .hero-photo { min-height: 52vw; max-height: 420px; }
-    .hero-photo::after {
-      background: linear-gradient(0deg, var(--ink) 0%, transparent 48%);
+  /* ——— Mobile ——— */
+  @media (max-width: 860px) {
+    .masthead {
+      grid-template-columns: 1fr auto;
+      grid-template-areas:
+        "brand mark"
+        "issue issue";
     }
-    .hero-copy { padding: 24px max(18px, var(--safe-x)) 32px; }
-    .hero-lead { max-width: none; font-size: 1.05rem; }
-    .score-pill {
-      width: 100%;
-      justify-content: space-between;
-      border-radius: 14px;
-      flex-wrap: wrap;
+    .masthead .brand { grid-area: brand; }
+    .masthead .mark { grid-area: mark; width: 36px; height: 36px; font-size: 1rem; }
+    .masthead .issue { grid-area: issue; text-align: left; }
+
+    .cover {
+      grid-template-columns: 1fr;
+      min-height: auto;
     }
-    .feature, .feature.alt { grid-template-columns: 1fr; }
-    .feature.alt .f-photo { order: 0; }
-    .f-body, .feature.alt .f-body { padding: 20px; }
-    .f-photo { min-height: 240px; max-height: 320px; }
-    .grid-3, .grid-2 { grid-template-columns: 1fr; }
-    section.block { padding: 40px 0 20px; }
-    .pull { padding: 24px max(18px, var(--safe-x)); }
-    .masthead { padding-left: max(16px, var(--safe-x)); padding-right: max(16px, var(--safe-r)); }
-    .wrap { padding-left: max(16px, var(--safe-x)); padding-right: max(16px, var(--safe-r)); }
+    .cover-photo {
+      min-height: 58vw;
+      max-height: 460px;
+    }
+    .cover-photo img { object-position: center 10%; }
+    .cover-photo::after {
+      background:
+        linear-gradient(0deg, var(--ink) 0%, rgba(18,14,12,.15) 45%, transparent 70%);
+    }
+    .cover-copy {
+      margin-left: 0;
+      padding: 8px max(18px, var(--safe-x)) 36px;
+      margin-top: -48px;
+    }
+    .cover h1 { font-size: clamp(2.35rem, 11vw, 3.4rem); }
+    .cover-lead { max-width: none; }
+    .scoreboard { max-width: none; }
+
+    .story,
+    .story.flip { grid-template-columns: 1fr; }
+    .story.flip .story-photo { order: 0; }
+    .story-photo,
+    .story.flip .story-photo {
+      margin: 0 calc(-1 * max(18px, var(--safe-x)));
+      min-height: 280px;
+      max-height: 360px;
+    }
+    .story-photo img { min-height: 280px; max-height: 360px; }
+    .story-body p { max-width: none; }
+    .story-body p:first-of-type::first-letter {
+      font-size: 2.8rem;
+      padding-right: 8px;
+    }
+
+    .dossier {
+      grid-template-columns: 1fr;
+      gap: 0;
+    }
+    .dossier-lead {
+      grid-row: auto;
+      border-right: none;
+      padding-right: 0;
+      padding-bottom: 26px;
+      margin-bottom: 8px;
+      border-bottom: 1px solid var(--line);
+    }
+    .dossier-lead .portrait {
+      margin: 0 calc(-1 * max(18px, var(--safe-x))) 18px;
+      height: 300px;
+    }
+    .dossier-item { padding: 20px 0; }
+
+    .wire { grid-template-columns: 1fr; }
+    .wire-item + .wire-item {
+      border-left: none;
+      border-top: 1px solid var(--line);
+      padding-left: 0;
+    }
+
+    .sec-head { gap: 10px 16px; margin-bottom: 26px; }
+    .sec-num { font-size: 2.5rem; }
+    .block { padding: 48px 0 28px; }
+    .pull { padding: 36px max(18px, var(--safe-x)) 32px; }
   }
 
-  @media (max-width: 560px) {
-    .masthead .brand { letter-spacing: .18em; font-size: 11px; }
-    .masthead .issue { font-size: 10px; width: 100%; }
-    .hero h1 { font-size: clamp(1.9rem, 9vw, 2.6rem); }
-    .kicker { letter-spacing: .2em; font-size: 11px; }
-    .card .thumb { height: 220px; }
-    .f-body h3 { font-size: 1.4rem; }
-    .sec-title { margin-bottom: 20px; }
-    table.standings { font-size: 13px; }
-    table.standings th, table.standings td { padding: 11px 12px; }
-    .sources li { font-size: 13px; }
+  @media (max-width: 420px) {
+    .statline { grid-template-columns: 1fr 1fr; }
+    .statline > div:nth-child(2n) { border-right: none; }
   }
 
   @media print {
     body { background: #fff; color: #111; }
-    .masthead { position: static; backdrop-filter: none; }
-    .hero, .feature, .card, .pull, .score-card { break-inside: avoid; }
+    body::before { display: none; }
+    .cover, .story, .pull, .dossier-item { break-inside: avoid; }
   }
 </style>
 </head>
 <body>
 
-<header class="masthead sans">
-  <div class="brand">Футбольный журнал</div>
-  <div class="issue">Выпуск · 1–4 ноября 2026<span class="dot">●</span>для Никиты</div>
+<header class="masthead ui">
+  <div class="brand"><span>Выпуск №47</span>Футбольный журнал</div>
+  <div class="mark">Ф</div>
+  <div class="issue"><b>1–4 ноября 2026</b><br>для Никиты · онлайн</div>
 </header>
 
-<section class="hero">
-  <div class="hero-photo">
+<section class="cover">
+  <div class="cover-photo">
     <img src="assets/batrakov-hero.jpg" alt="Алексей Батраков в форме Галатасарая" width="1100" height="1100">
-    <div class="credit sans">Фото: Wikimedia Commons · Batrakov_Gala2026.jpg · CC0</div>
+    <div class="credit ui">Фото: Wikimedia Commons · Batrakov_Gala2026.jpg · CC0</div>
   </div>
-  <div class="hero-copy">
-    <div class="kicker sans">Герой номера · Лига чемпионов</div>
+  <div class="cover-copy">
+    <div class="kicker">Герой номера · Лига чемпионов</div>
     <h1>Батраков<em> снова</em><br>на обложке</h1>
-    <p class="hero-lead">Дубль на 12-й и 15-й минутах — и «Штутгарт» повержен. УЕФА назвал россиянина лучшим игроком матча.</p>
-    <div class="score-pill sans">
-      <div>
-        <div class="teams">Галатасарай — Штутгарт</div>
-        <strong>2 : 0</strong>
-      </div>
-      <div style="border-left:1px solid var(--line);padding-left:12px;color:var(--paper-dim);font-size:12px;line-height:1.4">
+    <p class="cover-lead">Дубль на 12-й и 15-й минутах — и «Штутгарт» повержен. УЕФА назвал россиянина лучшим игроком матча.</p>
+    <div class="scoreboard">
+      <div class="score">2:0</div>
+      <div class="meta ui">
+        <b>Галатасарай — Штутгарт</b>
         ЛЧ · 3 ноября<br>4 гола в 4 матчах
       </div>
     </div>
@@ -420,161 +750,166 @@
 
 <figure class="pull">
   <blockquote>«Этот Батраков весьма хорош… в ЛЧ 4 матча — 4 гола… подмигивает грандам Европы»</blockquote>
-  <cite class="sans">Fotomaç</cite>
+  <cite>Fotomaç</cite>
 </figure>
 
 <main class="wrap">
 
   <section class="block">
-    <div class="sec-label sans">Обложка</div>
-    <h2 class="sec-title">Алексей Батраков · Галатасарай</h2>
-    <div class="rule"></div>
+    <div class="sec-head">
+      <div class="sec-num">01</div>
+      <div>
+        <div class="sec-label">Обложка</div>
+        <h2 class="sec-title">Алексей Батраков · Галатасарай</h2>
+      </div>
+    </div>
 
-    <article class="feature">
-      <div class="f-photo">
+    <article class="story">
+      <div class="story-photo">
         <img src="assets/batrakov.jpg" alt="Алексей Батраков" width="900" height="900">
       </div>
-      <div class="f-body">
+      <div class="story-body">
         <h3>Золотой мальчик Стамбула</h3>
-        <div class="f-meta sans">Галатасарай · атакующий полузащитник</div>
+        <div class="story-meta">Галатасарай · атакующий полузащитник</div>
         <p>«Галатасарай» обыграл «Штутгарт» со счётом <strong>2:0</strong>. Батраков забил на <strong>12-й</strong> и <strong>15-й</strong> минутах — дубль в стартовые четверть часа. УЕФА признал его игроком матча.</p>
         <p>В Лиге чемпионов у него уже <strong>4 гола в 4 матчах</strong>. Fanatik называет его «золотым мальчиком».</p>
-        <div class="stats sans">
-          <div class="stat"><b>2</b><small>гола матча</small></div>
-          <div class="stat"><b>4/4</b><small>голы / матчи ЛЧ</small></div>
-          <div class="stat"><b>MOTM</b><small>УЕФА</small></div>
+        <div class="statline">
+          <div><b>2</b><small>гола матча</small></div>
+          <div><b>4/4</b><small>голы / матчи ЛЧ</small></div>
+          <div><b>MOTM</b><small>УЕФА</small></div>
         </div>
-        <div class="next-strip sans">
-          <span class="chip">Следующий ЛЧ: <b>Галатасарай — Астон Вилла</b> · 24 ноября ≈20:45 МСК</span>
-        </div>
+        <div class="fixture">Следующий ЛЧ: <b>Галатасарай — Астон Вилла</b> · 24 ноября ≈20:45 МСК</div>
       </div>
     </article>
   </section>
 
   <section class="block">
-    <div class="sec-label sans">Вратарская рубрика</div>
-    <h2 class="sec-title">Матвей Сафонов · ПСЖ</h2>
-    <div class="rule"></div>
+    <div class="sec-head">
+      <div class="sec-num">02</div>
+      <div>
+        <div class="sec-label">Вратарская рубрика</div>
+        <h2 class="sec-title">Матвей Сафонов · ПСЖ</h2>
+      </div>
+    </div>
 
-    <article class="feature alt">
-      <div class="f-photo">
+    <article class="story flip">
+      <div class="story-photo">
         <img src="assets/safonov.jpg" alt="Матвей Сафонов" width="547" height="765">
       </div>
-      <div class="f-body">
+      <div class="story-body">
         <h3>Сухой матч в Испании</h3>
-        <div class="f-meta sans">Пари Сен-Жермен · вратарь</div>
+        <div class="story-meta">Пари Сен-Жермен · вратарь</div>
         <p>«Вильярреал» — ПСЖ <strong>0:6</strong>. Сафонов отыграл весь матч на ноль — это его <strong>3-й «сухарь» из 15</strong> матчей.</p>
         <p>Оценки прессы: <strong>Le Parisien — 6/10</strong>, <strong>RMC — 7/10</strong>. ПСЖ единолично лидирует в ЛЧ с <strong>12 очками</strong>.</p>
-        <div class="stats sans">
-          <div class="stat"><b>0</b><small>пропущено</small></div>
-          <div class="stat"><b>6</b><small>Le Parisien</small></div>
-          <div class="stat"><b>7</b><small>RMC</small></div>
-          <div class="stat"><b>12</b><small>очков ЛЧ · 1-е</small></div>
+        <div class="statline">
+          <div><b>0</b><small>пропущено</small></div>
+          <div><b>6</b><small>Le Parisien</small></div>
+          <div><b>7</b><small>RMC</small></div>
+          <div><b>12</b><small>очков ЛЧ · 1-е</small></div>
         </div>
-        <div class="next-strip sans">
-          <span class="chip">Следующий: <b>ПСЖ — Рома</b> · 25 ноября · 23:00 МСК</span>
-        </div>
+        <div class="fixture">Следующий: <b>ПСЖ — Рома</b> · 25 ноября · 23:00 МСК</div>
       </div>
     </article>
   </section>
 
   <section class="block">
-    <div class="sec-label sans">Наши в Европе</div>
-    <h2 class="sec-title">Остальные легионеры</h2>
-    <div class="rule"></div>
+    <div class="sec-head">
+      <div class="sec-num">03</div>
+      <div>
+        <div class="sec-label">Наши в Европе</div>
+        <h2 class="sec-title">Остальные легионеры</h2>
+      </div>
+    </div>
 
-    <div class="grid-3">
-      <article class="card">
-        <div class="thumb placeholder sans" aria-hidden="true">НК</div>
-        <div class="body">
-          <h4>Никита Хайкин</h4>
-          <div class="club sans">Будё/Глимт · вратарь</div>
-          <p>«Будё/Глимт» — «Лилль» <strong>0:0</strong>. Отыграл весь матч. УЕФА отметила его сейв после удара Баквы.</p>
-        </div>
-      </article>
-
-      <article class="card">
-        <div class="thumb">
+    <div class="dossier">
+      <article class="dossier-lead">
+        <div class="portrait">
           <img src="assets/golovin.jpg" alt="Александр Головин" width="516" height="774">
         </div>
-        <div class="body">
-          <h4>Александр Головин</h4>
-          <div class="club sans">Монако · полузащитник</div>
-          <p>«Пари» — «Монако» <strong>3:1</strong>. Головин провёл на поле все <strong>90 минут</strong>. Голов и передач не было.</p>
-        </div>
+        <h4>Александр Головин</h4>
+        <div class="club">Монако · полузащитник</div>
+        <p>«Пари» — «Монако» <strong>3:1</strong>. Головин провёл на поле все <strong>90 минут</strong>. Голов и передач не было.</p>
       </article>
 
-      <article class="card">
-        <div class="thumb placeholder sans" aria-hidden="true">АЗ</div>
-        <div class="body">
-          <h4>Арсен Захарян</h4>
-          <div class="club sans">Реал Сосьедад</div>
-          <p>Пропустил дерби с «Атлетиком». Уже вернулся к тренировкам; рассчитывал сыграть с «Лионом» в ЛЕ 5 ноября.</p>
-        </div>
+      <article class="dossier-item">
+        <div class="mono-mark">НК</div>
+        <h4>Никита Хайкин</h4>
+        <div class="club">Будё/Глимт · вратарь</div>
+        <p>«Будё/Глимт» — «Лилль» <strong>0:0</strong>. Отыграл весь матч. УЕФА отметила его сейв после удара Баквы.</p>
       </article>
-    </div>
 
-    <div class="grid-2" style="margin-top:18px">
-      <article class="card">
-        <div class="thumb placeholder sans" aria-hidden="true">СП</div>
-        <div class="body">
-          <h4>Сергей Пиняев</h4>
-          <div class="club sans">Локомотив Москва</div>
-          <p>«Локомотив» — «Спартак» <strong>0:4</strong>. Вышел на замену на <strong>55-й</strong> минуте. Трансферных слухов нет. «Локо» — 14-е место, 11 очков.</p>
-        </div>
+      <article class="dossier-item">
+        <div class="mono-mark">АЗ</div>
+        <h4>Арсен Захарян</h4>
+        <div class="club">Реал Сосьедад</div>
+        <p>Пропустил дерби с «Атлетиком». Уже вернулся к тренировкам; рассчитывал сыграть с «Лионом» в ЛЕ 5 ноября.</p>
       </article>
-      <article class="card">
-        <div class="thumb placeholder sans" aria-hidden="true">ФЧ</div>
-        <div class="body">
-          <h4>Фёдор Чалов</h4>
-          <div class="club sans">ПАОК · нападающий</div>
-          <p>Восстанавливается после операции на мениске. Ожидаемое возвращение — около начала 2027 года.</p>
-        </div>
+
+      <article class="dossier-item">
+        <div class="mono-mark">СП</div>
+        <h4>Сергей Пиняев</h4>
+        <div class="club">Локомотив Москва</div>
+        <p>«Локомотив» — «Спартак» <strong>0:4</strong>. Вышел на замену на <strong>55-й</strong> минуте. Трансферных слухов нет. «Локо» — 14-е место, 11 очков.</p>
+      </article>
+
+      <article class="dossier-item">
+        <div class="mono-mark">ФЧ</div>
+        <h4>Фёдор Чалов</h4>
+        <div class="club">ПАОК · нападающий</div>
+        <p>Восстанавливается после операции на мениске. Ожидаемое возвращение — около начала 2027 года.</p>
       </article>
     </div>
   </section>
 
   <section class="block">
-    <div class="sec-label sans">MLS · Кипр</div>
-    <h2 class="sec-title">Миранчук и «Красава»</h2>
-    <div class="rule"></div>
+    <div class="sec-head">
+      <div class="sec-num">04</div>
+      <div>
+        <div class="sec-label">MLS · Кипр</div>
+        <h2 class="sec-title">Миранчук и «Красава»</h2>
+      </div>
+    </div>
 
-    <article class="feature">
-      <div class="f-photo">
+    <article class="story">
+      <div class="story-photo">
         <img src="assets/miranchuk.jpg" alt="Алексей Миранчук" width="900" height="1350">
       </div>
-      <div class="f-body">
+      <div class="story-body">
         <h3>Гол + передача в Атланте</h3>
-        <div class="f-meta sans">Atlanta United · полузащитник</div>
+        <div class="story-meta">Atlanta United · полузащитник</div>
         <p>«Атланта» обыграла «Торонто» <strong>3:1</strong>. Миранчук отдал голевую передачу и забил сам. За сезон у него уже <strong>7 голов</strong>.</p>
-        <div class="stats sans">
-          <div class="stat"><b>1+1</b><small>гол + пас</small></div>
-          <div class="stat"><b>7</b><small>голов за сезон</small></div>
-          <div class="stat"><b>3:1</b><small>vs Toronto</small></div>
+        <div class="statline">
+          <div><b>1+1</b><small>гол + пас</small></div>
+          <div><b>7</b><small>голов за сезон</small></div>
+          <div><b>3:1</b><small>vs Toronto</small></div>
         </div>
       </div>
     </article>
 
-    <div class="scores" style="margin-top:20px">
-      <div class="score-card sans">
+    <div class="wire">
+      <div class="wire-item">
         <div class="comp">Кипр · 31 октября</div>
         <div class="line"><span>Красава — АЕК Ларнака</span><span class="res">2:2</span></div>
-        <p style="margin-top:8px;font-size:12px;color:var(--muted)">14-е место · 5 очков</p>
+        <p class="note">14-е место · 5 очков</p>
       </div>
-      <div class="score-card sans">
+      <div class="wire-item">
         <div class="comp">Следующий матч</div>
-        <div class="line"><span>АЕЛ — Красава</span><span class="res" style="font-size:1rem;color:var(--gold-soft)">7.11</span></div>
-        <p style="margin-top:8px;font-size:12px;color:var(--muted)">17:00 МСК · в гостях</p>
+        <div class="line"><span>АЕЛ — Красава</span><span class="res" style="color:var(--gold-soft);font-size:1.25rem">7.11</span></div>
+        <p class="note">17:00 МСК · в гостях</p>
       </div>
     </div>
   </section>
 
   <section class="block">
-    <div class="sec-label sans">Россия</div>
-    <h2 class="sec-title">Таблица РПЛ</h2>
-    <div class="rule"></div>
+    <div class="sec-head">
+      <div class="sec-num">05</div>
+      <div>
+        <div class="sec-label">Россия</div>
+        <h2 class="sec-title">Таблица РПЛ</h2>
+      </div>
+    </div>
     <div class="table-wrap">
-      <table class="standings sans">
+      <table class="standings">
         <thead>
           <tr><th>#</th><th>Клуб</th><th>Очки</th><th>Заметка</th></tr>
         </thead>
@@ -590,15 +925,20 @@
   </section>
 
   <section class="sources">
-    <div class="sec-label sans">Источники</div>
-    <h2 class="sec-title" style="font-size:1.5rem;margin-bottom:16px">Куда смотреть дальше</h2>
-    <ul class="sans">
+    <div class="sec-head" style="margin-bottom:20px">
+      <div class="sec-num" style="font-size:2.2rem">※</div>
+      <div>
+        <div class="sec-label">Источники</div>
+        <h2 class="sec-title" style="font-size:clamp(1.4rem,2.5vw,1.85rem)">Куда смотреть дальше</h2>
+      </div>
+    </div>
+    <ul>
       <li><a href="https://www.uefa.com/uefachampionsleague/news/02ab-21fc4afdbe57-11bbecf54b40-1000--champions-league-round-up-paris-remain-perfect-as-barcelo/" target="_blank" rel="noopener">УЕФА — итоги тура Лиги чемпионов</a></li>
       <li><a href="https://ria.ru/20261103/batrakov-2129081536.html" target="_blank" rel="noopener">РИА Новости — дубль Батракова</a></li>
       <li><a href="https://www.leparisien.fr/sports/football/ligue-des-champions/villarreal-psg-0-6-les-notes-des-joueurs-parisiens-avec-un-ruiz-dominant-et-double-buteur-03-11-2026-XB5IJOGC2JFARKRAYWOT3M3IXQ.php" target="_blank" rel="noopener">Le Parisien — оценки игроков ПСЖ</a></li>
       <li><a href="https://www.sport-express.net/football/rfpl/news/chempionat-rossii-po-futbolu-turnirnaya-tablica-rpl-posle-13-tura-2-noyabrya-2026-2470189/" target="_blank" rel="noopener">Спорт-Экспресс — таблица РПЛ после 13-го тура</a></li>
     </ul>
-    <p style="margin-top:22px;font-size:12px;color:var(--muted)" class="sans">
+    <p class="photo-credits">
       Фото: Wikimedia Commons — Batrakov_Gala2026.jpg (CC0), Safonov_asse_psg_2425.png (CC0),
       Aleksandr_Golovin.jpg (CC BY-SA 3.0 · Кирилл Венедиктов),
       Aleksei_Miranchuk_Red_Bull_Atlanta_5.31.25-105.jpg (CC BY-SA 4.0 · Bryan Berlin).
@@ -606,9 +946,9 @@
   </section>
 </main>
 
-<footer class="colophon sans">
-  <div>ФУТБОЛЬНЫЙ ЖУРНАЛ · 1–4 НОЯБРЯ 2026</div>
-  <div>ОНЛАЙН-ВЫПУСК · ДЛЯ НИКИТЫ</div>
+<footer class="colophon">
+  <div>Футбольный журнал · 1–4 ноября 2026</div>
+  <div>Онлайн-выпуск · для Никиты</div>
 </footer>
 
 </body>
