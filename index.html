@@ -719,6 +719,35 @@
     body::before { display: none; }
     .cover, .story, .pull, .dossier-item { break-inside: avoid; }
   }
+
+  /* Club crests */
+  .crest {
+    width: 1.35em; height: 1.35em;
+    object-fit: contain;
+    vertical-align: -0.28em;
+    margin-right: 0.35em;
+    display: inline-block;
+  }
+  .crest.lg { width: 1.7em; height: 1.7em; vertical-align: -0.4em; }
+  .club-line, .story-meta, .dossier .club, .wire .line span:first-child,
+  .scoreboard .meta b, table.standings td {
+    /* keep baseline tidy */
+  }
+  .club-with-crest {
+    display: inline-flex; align-items: center; gap: 0.4em;
+    flex-wrap: wrap;
+  }
+  .club-with-crest .crest { margin-right: 0; }
+  .masthead .crests-row {
+    display: none;
+  }
+  .fixture .crest, .wire .crest { width: 1.15em; height: 1.15em; vertical-align: -0.22em; margin-right: 0.3em; }
+  table.standings .crest {
+    width: 1.25em; height: 1.25em; margin-right: 0.45em; vertical-align: -0.25em;
+  }
+  /* hide legacy on-photo credits if any remain */
+  .credit { display: none !important; }
+
 </style>
 </head>
 <body>
@@ -731,8 +760,7 @@
 
 <section class="cover">
   <div class="cover-photo">
-    <img src="assets/batrakov-hero.jpg" alt="Алексей Батраков в форме Галатасарая" width="1100" height="1100">
-    <div class="credit ui">Фото: Wikimedia Commons · Batrakov_Gala2026.jpg · CC0</div>
+    <img src="assets/batrakov-hero.jpg?v=1793997619" alt="Алексей Батраков в форме Галатасарая" width="1100" height="1100">
   </div>
   <div class="cover-copy">
     <div class="kicker">Герой номера · Лига чемпионов</div>
@@ -741,7 +769,7 @@
     <div class="scoreboard">
       <div class="score">2:0</div>
       <div class="meta ui">
-        <b>Галатасарай — Штутгарт</b>
+        <b class="club-with-crest"><img src="assets/crests/galatasaray.png?v=1793997619" alt="" width="32" height="32" class="crest" loading="lazy">Галатасарай — <img src="assets/crests/stuttgart.png?v=1793997619" alt="" width="32" height="32" class="crest" loading="lazy">Штутгарт</b>
         ЛЧ · 3 ноября<br>4 гола в 4 матчах
       </div>
     </div>
@@ -766,19 +794,19 @@
 
     <article class="story">
       <div class="story-photo">
-        <img src="assets/batrakov.jpg" alt="Алексей Батраков" width="900" height="900">
+        <img src="assets/batrakov.jpg?v=1793997619" alt="Алексей Батраков" width="900" height="900">
       </div>
       <div class="story-body">
         <h3>Золотой мальчик Стамбула</h3>
-        <div class="story-meta">Галатасарай · атакующий полузащитник</div>
-        <p>«Галатасарай» обыграл «Штутгарт» со счётом <strong>2:0</strong>. Батраков забил на <strong>12-й</strong> и <strong>15-й</strong> минутах — дубль в стартовые четверть часа. УЕФА признал его игроком матча.</p>
+        <div class="story-meta"><img src="assets/crests/galatasaray.png?v=1793997619" alt="" width="32" height="32" class="crest" loading="lazy">Галатасарай · атакующий полузащитник</div>
+        <p><img src="assets/crests/galatasaray.png?v=1793997619" alt="" width="32" height="32" class="crest" loading="lazy">«Галатасарай» обыграл <img src="assets/crests/stuttgart.png?v=1793997619" alt="" width="32" height="32" class="crest" loading="lazy">«Штутгарт» со счётом <strong>2:0</strong>. Батраков забил на <strong>12-й</strong> и <strong>15-й</strong> минутах — дубль в стартовые четверть часа. УЕФА признал его игроком матча.</p>
         <p>В Лиге чемпионов у него уже <strong>4 гола в 4 матчах</strong>. Fanatik называет его «золотым мальчиком».</p>
         <div class="statline">
           <div><b>2</b><small>гола матча</small></div>
           <div><b>4/4</b><small>голы / матчи ЛЧ</small></div>
           <div><b>MOTM</b><small>УЕФА</small></div>
         </div>
-        <div class="fixture">Следующий ЛЧ: <b>Галатасарай — Астон Вилла</b> · 24 ноября ≈20:45 МСК</div>
+        <div class="fixture">Следующий ЛЧ: <b><img src="assets/crests/galatasaray.png?v=1793997619" alt="" width="32" height="32" class="crest" loading="lazy">Галатасарай — <img src="assets/crests/villa.png?v=1793997619" alt="" width="32" height="32" class="crest" loading="lazy">Астон Вилла</b> · 24 ноября ≈20:45 МСК</div>
       </div>
     </article>
   </section>
@@ -794,12 +822,12 @@
 
     <article class="story flip">
       <div class="story-photo">
-        <img src="assets/safonov.jpg" alt="Матвей Сафонов" width="547" height="765">
+        <img src="assets/safonov.jpg?v=1793997619" alt="Матвей Сафонов" width="547" height="765">
       </div>
       <div class="story-body">
         <h3>Сухой матч в Испании</h3>
-        <div class="story-meta">Пари Сен-Жермен · вратарь</div>
-        <p>«Вильярреал» — ПСЖ <strong>0:6</strong>. Сафонов отыграл весь матч на ноль — это его <strong>3-й «сухарь» из 15</strong> матчей.</p>
+        <div class="story-meta"><img src="assets/crests/psg.png?v=1793997619" alt="" width="32" height="32" class="crest" loading="lazy">Пари Сен-Жермен · вратарь</div>
+        <p><img src="assets/crests/villarreal.png?v=1793997619" alt="" width="32" height="32" class="crest" loading="lazy">«Вильярреал» — <img src="assets/crests/psg.png?v=1793997619" alt="" width="32" height="32" class="crest" loading="lazy">ПСЖ <strong>0:6</strong>. Сафонов отыграл весь матч на ноль — это его <strong>3-й «сухарь» из 15</strong> матчей.</p>
         <p>Оценки прессы: <strong>Le Parisien — 6/10</strong>, <strong>RMC — 7/10</strong>. ПСЖ единолично лидирует в ЛЧ с <strong>12 очками</strong>.</p>
         <div class="statline">
           <div><b>0</b><small>пропущено</small></div>
@@ -807,7 +835,7 @@
           <div><b>7</b><small>RMC</small></div>
           <div><b>12</b><small>очков ЛЧ · 1-е</small></div>
         </div>
-        <div class="fixture">Следующий: <b>ПСЖ — Рома</b> · 25 ноября · 23:00 МСК</div>
+        <div class="fixture">Следующий: <b><img src="assets/crests/psg.png?v=1793997619" alt="" width="32" height="32" class="crest" loading="lazy">ПСЖ — <img src="assets/crests/roma.png?v=1793997619" alt="" width="32" height="32" class="crest" loading="lazy">Рома</b> · 25 ноября · 23:00 МСК</div>
       </div>
     </article>
   </section>
@@ -824,38 +852,38 @@
     <div class="dossier">
       <article class="dossier-lead">
         <div class="portrait">
-          <img src="assets/golovin.jpg" alt="Александр Головин" width="516" height="774">
+          <img src="assets/golovin.jpg?v=1793997619" alt="Александр Головин" width="516" height="774">
         </div>
         <h4>Александр Головин</h4>
-        <div class="club">Монако · полузащитник</div>
-        <p>«Пари» — «Монако» <strong>3:1</strong>. Головин провёл на поле все <strong>90 минут</strong>. Голов и передач не было.</p>
+        <div class="club"><img src="assets/crests/monaco.png?v=1793997619" alt="" width="32" height="32" class="crest" loading="lazy">Монако · полузащитник</div>
+        <p>«Пари» — <img src="assets/crests/monaco.png?v=1793997619" alt="" width="32" height="32" class="crest" loading="lazy">«Монако» <strong>3:1</strong>. Головин провёл на поле все <strong>90 минут</strong>. Голов и передач не было.</p>
       </article>
 
       <article class="dossier-item">
         <div class="mono-mark">НК</div>
         <h4>Никита Хайкин</h4>
-        <div class="club">Будё/Глимт · вратарь</div>
-        <p>«Будё/Глимт» — «Лилль» <strong>0:0</strong>. Отыграл весь матч. УЕФА отметила его сейв после удара Баквы.</p>
+        <div class="club"><img src="assets/crests/bodo.png?v=1793997619" alt="" width="32" height="32" class="crest" loading="lazy">Будё/Глимт · вратарь</div>
+        <p><img src="assets/crests/bodo.png?v=1793997619" alt="" width="32" height="32" class="crest" loading="lazy">«Будё/Глимт» — <img src="assets/crests/lille.png?v=1793997619" alt="" width="32" height="32" class="crest" loading="lazy">«Лилль» <strong>0:0</strong>. Отыграл весь матч. УЕФА отметила его сейв после удара Баквы.</p>
       </article>
 
       <article class="dossier-item">
         <div class="mono-mark">АЗ</div>
         <h4>Арсен Захарян</h4>
-        <div class="club">Реал Сосьедад</div>
+        <div class="club"><img src="assets/crests/sociedad.png?v=1793997619" alt="" width="32" height="32" class="crest" loading="lazy">Реал Сосьедад</div>
         <p>Пропустил дерби с «Атлетиком». Уже вернулся к тренировкам; рассчитывал сыграть с «Лионом» в ЛЕ 5 ноября.</p>
       </article>
 
       <article class="dossier-item">
         <div class="mono-mark">СП</div>
         <h4>Сергей Пиняев</h4>
-        <div class="club">Локомотив Москва</div>
-        <p>«Локомотив» — «Спартак» <strong>0:4</strong>. Вышел на замену на <strong>55-й</strong> минуте. Трансферных слухов нет. «Локо» — 14-е место, 11 очков.</p>
+        <div class="club"><img src="assets/crests/lokomotiv.png?v=1793997619" alt="" width="32" height="32" class="crest" loading="lazy">Локомотив Москва</div>
+        <p><img src="assets/crests/lokomotiv.png?v=1793997619" alt="" width="32" height="32" class="crest" loading="lazy">«Локомотив» — <img src="assets/crests/spartak.png?v=1793997619" alt="" width="32" height="32" class="crest" loading="lazy">«Спартак» <strong>0:4</strong>. Вышел на замену на <strong>55-й</strong> минуте. Трансферных слухов нет. «Локо» — 14-е место, 11 очков.</p>
       </article>
 
       <article class="dossier-item">
         <div class="mono-mark">ФЧ</div>
         <h4>Фёдор Чалов</h4>
-        <div class="club">ПАОК · нападающий</div>
+        <div class="club"><img src="assets/crests/paok.png?v=1793997619" alt="" width="32" height="32" class="crest" loading="lazy">ПАОК · нападающий</div>
         <p>Восстанавливается после операции на мениске. Ожидаемое возвращение — около начала 2027 года.</p>
       </article>
     </div>
@@ -872,12 +900,12 @@
 
     <article class="story">
       <div class="story-photo">
-        <img src="assets/miranchuk.jpg" alt="Алексей Миранчук" width="900" height="1350">
+        <img src="assets/miranchuk.jpg?v=1793997619" alt="Алексей Миранчук" width="900" height="1350">
       </div>
       <div class="story-body">
         <h3>Гол + передача в Атланте</h3>
-        <div class="story-meta">Atlanta United · полузащитник</div>
-        <p>«Атланта» обыграла «Торонто» <strong>3:1</strong>. Миранчук отдал голевую передачу и забил сам. За сезон у него уже <strong>7 голов</strong>.</p>
+        <div class="story-meta"><img src="assets/crests/atlanta.png?v=1793997619" alt="" width="32" height="32" class="crest" loading="lazy">Atlanta United · полузащитник</div>
+        <p><img src="assets/crests/atlanta.png?v=1793997619" alt="" width="32" height="32" class="crest" loading="lazy">«Атланта» обыграла <img src="assets/crests/toronto.png?v=1793997619" alt="" width="32" height="32" class="crest" loading="lazy">«Торонто» <strong>3:1</strong>. Миранчук отдал голевую передачу и забил сам. За сезон у него уже <strong>7 голов</strong>.</p>
         <div class="statline">
           <div><b>1+1</b><small>гол + пас</small></div>
           <div><b>7</b><small>голов за сезон</small></div>
@@ -889,12 +917,12 @@
     <div class="wire">
       <div class="wire-item">
         <div class="comp">Кипр · 31 октября</div>
-        <div class="line"><span>Красава — АЕК Ларнака</span><span class="res">2:2</span></div>
+        <div class="line"><span><img src="assets/crests/aek.png?v=1793997619" alt="" width="32" height="32" class="crest" loading="lazy">Красава — АЕК Ларнака</span><span class="res">2:2</span></div>
         <p class="note">14-е место · 5 очков</p>
       </div>
       <div class="wire-item">
         <div class="comp">Следующий матч</div>
-        <div class="line"><span>АЕЛ — Красава</span><span class="res" style="color:var(--gold-soft);font-size:1.25rem">7.11</span></div>
+        <div class="line"><span><img src="assets/crests/ael.png?v=1793997619" alt="" width="32" height="32" class="crest" loading="lazy">АЕЛ — Красава</span><span class="res" style="color:var(--gold-soft);font-size:1.25rem">7.11</span></div>
         <p class="note">17:00 МСК · в гостях</p>
       </div>
     </div>
@@ -914,11 +942,11 @@
           <tr><th>#</th><th>Клуб</th><th>Очки</th><th>Заметка</th></tr>
         </thead>
         <tbody>
-          <tr><td class="hi">1</td><td>Зенит</td><td class="hi">30</td><td>лидер</td></tr>
-          <tr><td>2</td><td>Динамо</td><td>28</td><td></td></tr>
-          <tr><td>3</td><td>ЦСКА</td><td>26</td><td></td></tr>
-          <tr><td>4</td><td>Спартак</td><td>26</td><td></td></tr>
-          <tr><td class="dim">14</td><td class="dim">Локомотив</td><td class="dim">11</td><td class="dim">Пиняев</td></tr>
+          <tr><td class="hi">1</td><td><img src="assets/crests/zenit.png?v=1793997619" alt="" width="32" height="32" class="crest" loading="lazy">Зенит</td><td class="hi">30</td><td>лидер</td></tr>
+          <tr><td>2</td><td><img src="assets/crests/dynamo.png?v=1793997619" alt="" width="32" height="32" class="crest" loading="lazy">Динамо</td><td>28</td><td></td></tr>
+          <tr><td>3</td><td><img src="assets/crests/cska.png?v=1793997619" alt="" width="32" height="32" class="crest" loading="lazy">ЦСКА</td><td>26</td><td></td></tr>
+          <tr><td>4</td><td><img src="assets/crests/spartak.png?v=1793997619" alt="" width="32" height="32" class="crest" loading="lazy">Спартак</td><td>26</td><td></td></tr>
+          <tr><td class="dim">14</td><td class="dim"><img src="assets/crests/lokomotiv.png?v=1793997619" alt="" width="32" height="32" class="crest" loading="lazy">Локомотив</td><td class="dim">11</td><td class="dim">Пиняев</td></tr>
         </tbody>
       </table>
     </div>
@@ -939,9 +967,12 @@
       <li><a href="https://www.sport-express.net/football/rfpl/news/chempionat-rossii-po-futbolu-turnirnaya-tablica-rpl-posle-13-tura-2-noyabrya-2026-2470189/" target="_blank" rel="noopener">Спорт-Экспресс — таблица РПЛ после 13-го тура</a></li>
     </ul>
     <p class="photo-credits">
-      Фото: Wikimedia Commons — Batrakov_Gala2026.jpg (CC0), Safonov_asse_psg_2425.png (CC0),
-      Aleksandr_Golovin.jpg (CC BY-SA 3.0 · Кирилл Венедиктов),
-      Aleksei_Miranchuk_Red_Bull_Atlanta_5.31.25-105.jpg (CC BY-SA 4.0 · Bryan Berlin).
+      Фото по возможности — свежие матчевые кадры со свободной лицензией (Wikimedia Commons).
+      Батраков: Batrakov_Gala2026.jpg (CC0, матч с «Касымпашой», окт. 2026).
+      Сафонов: PSG–OM 8.02.2026 (167) (CC BY-SA 4.0 · Like tears in rain).
+      Головин: Aleksandr_Golovin_2021.jpg (CC BY-SA 3.0) — свежего матчевого фото «Монако» на Commons нет.
+      Миранчук: Aleksei_Miranchuk_2.jpg (CC BY 4.0 · Keiteay, Open Cup 19.05.2026).
+      Эмблемы клубов — Wikimedia / Wikipedia.
     </p>
   </section>
 </main>
