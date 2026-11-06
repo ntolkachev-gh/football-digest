@@ -1,0 +1,615 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Футбольный журнал · 1–4 ноября 2026</title>
+<style>
+  :root {
+    --ink: #0e1116;
+    --ink-2: #161b22;
+    --ink-3: #1f2630;
+    --paper: #f4efe6;
+    --paper-dim: #e7dfd2;
+    --gold: #d4a017;
+    --gold-soft: #f0d78c;
+    --crimson: #c8102e;
+    --cream: #faf7f1;
+    --muted: #8b93a1;
+    --line: rgba(244,239,230,.12);
+    --accent: #e8b923;
+    --shadow: 0 12px 40px rgba(0,0,0,.35);
+    --radius: 10px;
+    --safe-x: max(16px, env(safe-area-inset-left));
+    --safe-r: max(16px, env(safe-area-inset-right));
+    --safe-b: max(24px, env(safe-area-inset-bottom));
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; }
+  body {
+    font-family: "Georgia", "Times New Roman", "Liberation Serif", serif;
+    background:
+      radial-gradient(ellipse 80% 40% at 50% -10%, rgba(200,16,46,.12), transparent 50%),
+      var(--ink);
+    color: var(--paper);
+    line-height: 1.55;
+    -webkit-font-smoothing: antialiased;
+    padding-left: env(safe-area-inset-left);
+    padding-right: env(safe-area-inset-right);
+    padding-bottom: env(safe-area-inset-bottom);
+  }
+  .sans {
+    font-family: "Helvetica Neue", Helvetica, Arial, "Segoe UI", sans-serif;
+    letter-spacing: .02em;
+  }
+  img { max-width: 100%; display: block; }
+  a {
+    color: var(--gold-soft);
+    text-decoration: none;
+    border-bottom: 1px solid rgba(240,215,140,.35);
+    transition: color .2s ease, border-color .2s ease;
+  }
+  a:hover { color: #fff; border-bottom-color: #fff; }
+  a:focus-visible {
+    outline: 2px solid var(--gold);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  /* Masthead */
+  .masthead {
+    border-bottom: 1px solid var(--line);
+    padding: 16px max(20px, var(--safe-x));
+    padding-top: max(16px, env(safe-area-inset-top));
+    display: flex; align-items: center; justify-content: space-between;
+    gap: 12px; flex-wrap: wrap;
+    background: linear-gradient(180deg, #141820, var(--ink));
+    position: sticky; top: 0; z-index: 20;
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    background: linear-gradient(180deg, rgba(20,24,32,.92), rgba(14,17,22,.88));
+  }
+  .masthead .brand {
+    font-size: 12px; text-transform: uppercase; letter-spacing: .28em;
+    color: var(--gold); font-weight: 700;
+  }
+  .masthead .issue {
+    font-size: 11px; color: var(--muted); letter-spacing: .06em;
+  }
+  .masthead .dot { color: var(--crimson); margin: 0 8px; }
+
+  /* Hero */
+  .hero {
+    display: grid;
+    grid-template-columns: 1.05fr .95fr;
+    min-height: 72vh;
+    border-bottom: 1px solid var(--line);
+  }
+  .hero-photo {
+    position: relative; overflow: hidden; background: #000;
+    min-height: 420px;
+  }
+  .hero-photo img {
+    width: 100%; height: 100%; object-fit: cover; object-position: center top;
+    filter: contrast(1.05) saturate(1.05);
+  }
+  .hero-photo::after {
+    content: ""; position: absolute; inset: 0;
+    background: linear-gradient(90deg, transparent 55%, var(--ink) 100%),
+                linear-gradient(0deg, rgba(14,17,22,.55), transparent 40%);
+    pointer-events: none;
+  }
+  .hero-photo .credit {
+    position: absolute; left: 16px; bottom: 14px; z-index: 2;
+    font-size: 10px; color: rgba(244,239,230,.65); letter-spacing: .04em;
+    max-width: calc(100% - 32px);
+  }
+  .hero-copy {
+    padding: 48px 40px 40px 32px;
+    display: flex; flex-direction: column; justify-content: center;
+    background:
+      radial-gradient(ellipse at 80% 0%, rgba(200,16,46,.18), transparent 55%),
+      var(--ink);
+  }
+  .kicker {
+    font-size: 12px; text-transform: uppercase; letter-spacing: .32em;
+    color: var(--crimson); font-weight: 700; margin-bottom: 18px;
+  }
+  .hero h1 {
+    font-size: clamp(2.2rem, 5vw, 3.8rem);
+    line-height: 1.05; font-weight: 700;
+    letter-spacing: -.02em;
+    margin-bottom: 18px;
+    text-wrap: balance;
+  }
+  .hero h1 em {
+    font-style: italic; color: var(--gold-soft); font-weight: 500;
+  }
+  .hero-lead {
+    font-size: 1.12rem; color: var(--paper-dim); max-width: 36ch;
+    margin-bottom: 28px;
+  }
+  .score-pill {
+    display: inline-flex; align-items: center; gap: 12px;
+    background: var(--ink-3); border: 1px solid var(--line);
+    padding: 12px 18px; border-radius: 999px;
+    font-size: 14px;
+    box-shadow: var(--shadow);
+    min-height: 48px;
+  }
+  .score-pill strong {
+    font-size: 1.35rem; color: var(--gold); letter-spacing: .04em;
+  }
+  .score-pill span.teams { color: var(--muted); font-size: 12px; text-transform: uppercase; letter-spacing: .08em; }
+
+  /* Pull quote */
+  .pull {
+    margin: 0;
+    padding: 36px 40px;
+    background:
+      linear-gradient(135deg, rgba(212,160,23,.06), transparent 40%),
+      var(--ink-2);
+    border-left: 4px solid var(--gold);
+    border-bottom: 1px solid var(--line);
+  }
+  .pull blockquote {
+    font-size: clamp(1.2rem, 2.4vw, 1.75rem);
+    font-style: italic; line-height: 1.35;
+    max-width: 50ch;
+  }
+  .pull cite {
+    display: block; margin-top: 14px;
+    font-size: 12px; font-style: normal; letter-spacing: .18em;
+    text-transform: uppercase; color: var(--gold);
+  }
+
+  /* Layout */
+  .wrap {
+    max-width: 1120px; margin: 0 auto;
+    padding: 0 max(24px, var(--safe-x));
+  }
+  section.block {
+    padding: 56px 0 24px;
+    border-bottom: 1px solid var(--line);
+  }
+  .sec-label {
+    font-size: 11px; text-transform: uppercase; letter-spacing: .3em;
+    color: var(--gold); margin-bottom: 10px; font-weight: 700;
+  }
+  .sec-title {
+    font-size: clamp(1.65rem, 3vw, 2.4rem);
+    margin-bottom: 28px; letter-spacing: -.015em;
+    text-wrap: balance;
+  }
+
+  /* Feature cards */
+  .feature {
+    display: grid; grid-template-columns: 280px 1fr; gap: 28px;
+    background: var(--ink-2); border: 1px solid var(--line);
+    border-radius: var(--radius); overflow: hidden; margin-bottom: 24px;
+    box-shadow: 0 8px 28px rgba(0,0,0,.22);
+    transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+  }
+  .feature.alt { grid-template-columns: 1fr 280px; }
+  .feature.alt .f-photo { order: 2; }
+  .f-photo { position: relative; min-height: 320px; background: #000; }
+  .f-photo img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+  .f-body { padding: 28px 28px 28px 8px; }
+  .feature.alt .f-body { padding: 28px 8px 28px 28px; }
+  .f-body h3 {
+    font-size: 1.65rem; margin-bottom: 6px;
+  }
+  .f-meta {
+    font-size: 12px; color: var(--muted); text-transform: uppercase;
+    letter-spacing: .14em; margin-bottom: 16px;
+  }
+  .f-body p { color: var(--paper-dim); margin-bottom: 12px; font-size: 1.02rem; }
+  .stats {
+    display: flex; flex-wrap: wrap; gap: 10px; margin-top: 18px;
+  }
+  .stat {
+    background: var(--ink-3); border: 1px solid var(--line);
+    padding: 12px 14px; border-radius: 8px; min-width: 88px;
+    min-height: 56px;
+  }
+  .stat b { display: block; font-size: 1.25rem; color: var(--gold); line-height: 1.1; }
+  .stat small { font-size: 10px; text-transform: uppercase; letter-spacing: .1em; color: var(--muted); }
+
+  /* Player grid */
+  .grid-3 {
+    display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px;
+  }
+  .grid-2 {
+    display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px;
+  }
+  .card {
+    background: var(--ink-2); border: 1px solid var(--line);
+    border-radius: var(--radius); overflow: hidden;
+    display: flex; flex-direction: column;
+    box-shadow: 0 6px 20px rgba(0,0,0,.18);
+    transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
+  }
+  .card .thumb {
+    height: 200px; background: #111; position: relative; overflow: hidden;
+  }
+  .card .thumb img { width: 100%; height: 100%; object-fit: cover; object-position: center top; }
+  .card .thumb.placeholder {
+    display: flex; align-items: center; justify-content: center;
+    background: linear-gradient(135deg, #1a2030, #2a1520);
+    font-size: 42px; color: var(--gold); font-weight: 700;
+  }
+  .card .body { padding: 18px 18px 22px; flex: 1; }
+  .card h4 { font-size: 1.15rem; margin-bottom: 4px; }
+  .card .club { font-size: 11px; color: var(--muted); text-transform: uppercase; letter-spacing: .12em; margin-bottom: 10px; }
+  .card p { font-size: .95rem; color: var(--paper-dim); }
+
+  @media (hover: hover) and (pointer: fine) {
+    .feature:hover, .card:hover {
+      transform: translateY(-3px);
+      border-color: rgba(240,215,140,.28);
+      box-shadow: 0 16px 36px rgba(0,0,0,.4);
+    }
+    .score-card:hover {
+      border-color: rgba(240,215,140,.25);
+      background: #252c38;
+    }
+  }
+
+  /* Tables */
+  .table-wrap {
+    overflow-x: auto; margin: 12px 0 8px;
+    -webkit-overflow-scrolling: touch;
+    border: 1px solid var(--line);
+    border-radius: var(--radius);
+    background: var(--ink-2);
+  }
+  table.standings {
+    width: 100%; border-collapse: collapse; font-size: 14px;
+    min-width: 320px;
+  }
+  table.standings th, table.standings td {
+    text-align: left; padding: 12px 14px; border-bottom: 1px solid var(--line);
+  }
+  table.standings tbody tr:last-child td { border-bottom: none; }
+  table.standings th {
+    font-size: 11px; text-transform: uppercase; letter-spacing: .14em;
+    color: var(--muted); font-weight: 600;
+    background: rgba(0,0,0,.2);
+    position: sticky; top: 0;
+  }
+  table.standings tr:hover td { background: rgba(255,255,255,.03); }
+  table.standings .hi { color: var(--gold); font-weight: 700; }
+  table.standings .dim { color: var(--muted); }
+
+  /* Mini scores */
+  .scores {
+    display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 12px; margin-top: 8px;
+  }
+  .score-card {
+    background: var(--ink-3); border: 1px solid var(--line);
+    border-radius: 8px; padding: 16px 16px;
+    min-height: 88px;
+    transition: border-color .2s ease, background .2s ease;
+  }
+  .score-card .comp {
+    font-size: 10px; text-transform: uppercase; letter-spacing: .16em;
+    color: var(--gold); margin-bottom: 6px;
+  }
+  .score-card .line {
+    display: flex; justify-content: space-between; align-items: baseline;
+    gap: 12px; font-size: 1rem;
+  }
+  .score-card .res {
+    font-weight: 700; color: var(--cream); font-size: 1.2rem; letter-spacing: .04em;
+    white-space: nowrap;
+  }
+
+  /* Sources / footer */
+  .sources {
+    padding: 40px 0 max(60px, var(--safe-b));
+  }
+  .sources ul { list-style: none; }
+  .sources li {
+    margin: 10px 0; font-size: 14px; color: var(--paper-dim);
+    line-height: 1.45;
+  }
+  .sources li::before { content: "▸ "; color: var(--gold); }
+  .sources a {
+    display: inline;
+    padding: 2px 0;
+  }
+  footer.colophon {
+    border-top: 1px solid var(--line);
+    padding: 22px max(24px, var(--safe-x)) max(40px, var(--safe-b));
+    display: flex; justify-content: space-between; flex-wrap: wrap; gap: 12px;
+    font-size: 11px; color: var(--muted); letter-spacing: .06em;
+  }
+
+  /* Decorative rule */
+  .rule {
+    height: 1px; background: linear-gradient(90deg, var(--gold), transparent 70%);
+    margin: 8px 0 20px; max-width: 180px;
+  }
+
+  /* Next fixtures strip */
+  .next-strip {
+    display: flex; flex-wrap: wrap; gap: 10px; margin-top: 16px;
+  }
+  .chip {
+    border: 1px solid var(--line); background: rgba(255,255,255,.03);
+    padding: 10px 14px; border-radius: 999px; font-size: 12px; color: var(--paper-dim);
+    line-height: 1.35; min-height: 40px;
+    display: inline-flex; align-items: center;
+  }
+  .chip b { color: var(--gold-soft); font-weight: 600; }
+
+  /* Tablet / phone: hero one column */
+  @media (max-width: 720px) {
+    .hero { grid-template-columns: 1fr; min-height: auto; }
+    .hero-photo { min-height: 52vw; max-height: 420px; }
+    .hero-photo::after {
+      background: linear-gradient(0deg, var(--ink) 0%, transparent 48%);
+    }
+    .hero-copy { padding: 24px max(18px, var(--safe-x)) 32px; }
+    .hero-lead { max-width: none; font-size: 1.05rem; }
+    .score-pill {
+      width: 100%;
+      justify-content: space-between;
+      border-radius: 14px;
+      flex-wrap: wrap;
+    }
+    .feature, .feature.alt { grid-template-columns: 1fr; }
+    .feature.alt .f-photo { order: 0; }
+    .f-body, .feature.alt .f-body { padding: 20px; }
+    .f-photo { min-height: 240px; max-height: 320px; }
+    .grid-3, .grid-2 { grid-template-columns: 1fr; }
+    section.block { padding: 40px 0 20px; }
+    .pull { padding: 24px max(18px, var(--safe-x)); }
+    .masthead { padding-left: max(16px, var(--safe-x)); padding-right: max(16px, var(--safe-r)); }
+    .wrap { padding-left: max(16px, var(--safe-x)); padding-right: max(16px, var(--safe-r)); }
+  }
+
+  @media (max-width: 560px) {
+    .masthead .brand { letter-spacing: .18em; font-size: 11px; }
+    .masthead .issue { font-size: 10px; width: 100%; }
+    .hero h1 { font-size: clamp(1.9rem, 9vw, 2.6rem); }
+    .kicker { letter-spacing: .2em; font-size: 11px; }
+    .card .thumb { height: 220px; }
+    .f-body h3 { font-size: 1.4rem; }
+    .sec-title { margin-bottom: 20px; }
+    table.standings { font-size: 13px; }
+    table.standings th, table.standings td { padding: 11px 12px; }
+    .sources li { font-size: 13px; }
+  }
+
+  @media print {
+    body { background: #fff; color: #111; }
+    .masthead { position: static; backdrop-filter: none; }
+    .hero, .feature, .card, .pull, .score-card { break-inside: avoid; }
+  }
+</style>
+</head>
+<body>
+
+<header class="masthead sans">
+  <div class="brand">Футбольный журнал</div>
+  <div class="issue">Выпуск · 1–4 ноября 2026<span class="dot">●</span>для Никиты</div>
+</header>
+
+<section class="hero">
+  <div class="hero-photo">
+    <img src="assets/batrakov-hero.jpg" alt="Алексей Батраков в форме Галатасарая" width="1100" height="1100">
+    <div class="credit sans">Фото: Wikimedia Commons · Batrakov_Gala2026.jpg · CC0</div>
+  </div>
+  <div class="hero-copy">
+    <div class="kicker sans">Герой номера · Лига чемпионов</div>
+    <h1>Батраков<em> снова</em><br>на обложке</h1>
+    <p class="hero-lead">Дубль на 12-й и 15-й минутах — и «Штутгарт» повержен. УЕФА назвал россиянина лучшим игроком матча.</p>
+    <div class="score-pill sans">
+      <div>
+        <div class="teams">Галатасарай — Штутгарт</div>
+        <strong>2 : 0</strong>
+      </div>
+      <div style="border-left:1px solid var(--line);padding-left:12px;color:var(--paper-dim);font-size:12px;line-height:1.4">
+        ЛЧ · 3 ноября<br>4 гола в 4 матчах
+      </div>
+    </div>
+  </div>
+</section>
+
+<figure class="pull">
+  <blockquote>«Этот Батраков весьма хорош… в ЛЧ 4 матча — 4 гола… подмигивает грандам Европы»</blockquote>
+  <cite class="sans">Fotomaç</cite>
+</figure>
+
+<main class="wrap">
+
+  <section class="block">
+    <div class="sec-label sans">Обложка</div>
+    <h2 class="sec-title">Алексей Батраков · Галатасарай</h2>
+    <div class="rule"></div>
+
+    <article class="feature">
+      <div class="f-photo">
+        <img src="assets/batrakov.jpg" alt="Алексей Батраков" width="900" height="900">
+      </div>
+      <div class="f-body">
+        <h3>Золотой мальчик Стамбула</h3>
+        <div class="f-meta sans">Галатасарай · атакующий полузащитник</div>
+        <p>«Галатасарай» обыграл «Штутгарт» со счётом <strong>2:0</strong>. Батраков забил на <strong>12-й</strong> и <strong>15-й</strong> минутах — дубль в стартовые четверть часа. УЕФА признал его игроком матча.</p>
+        <p>В Лиге чемпионов у него уже <strong>4 гола в 4 матчах</strong>. Fanatik называет его «золотым мальчиком».</p>
+        <div class="stats sans">
+          <div class="stat"><b>2</b><small>гола матча</small></div>
+          <div class="stat"><b>4/4</b><small>голы / матчи ЛЧ</small></div>
+          <div class="stat"><b>MOTM</b><small>УЕФА</small></div>
+        </div>
+        <div class="next-strip sans">
+          <span class="chip">Следующий ЛЧ: <b>Галатасарай — Астон Вилла</b> · 24 ноября ≈20:45 МСК</span>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <section class="block">
+    <div class="sec-label sans">Вратарская рубрика</div>
+    <h2 class="sec-title">Матвей Сафонов · ПСЖ</h2>
+    <div class="rule"></div>
+
+    <article class="feature alt">
+      <div class="f-photo">
+        <img src="assets/safonov.jpg" alt="Матвей Сафонов" width="547" height="765">
+      </div>
+      <div class="f-body">
+        <h3>Сухой матч в Испании</h3>
+        <div class="f-meta sans">Пари Сен-Жермен · вратарь</div>
+        <p>«Вильярреал» — ПСЖ <strong>0:6</strong>. Сафонов отыграл весь матч на ноль — это его <strong>3-й «сухарь» из 15</strong> матчей.</p>
+        <p>Оценки прессы: <strong>Le Parisien — 6/10</strong>, <strong>RMC — 7/10</strong>. ПСЖ единолично лидирует в ЛЧ с <strong>12 очками</strong>.</p>
+        <div class="stats sans">
+          <div class="stat"><b>0</b><small>пропущено</small></div>
+          <div class="stat"><b>6</b><small>Le Parisien</small></div>
+          <div class="stat"><b>7</b><small>RMC</small></div>
+          <div class="stat"><b>12</b><small>очков ЛЧ · 1-е</small></div>
+        </div>
+        <div class="next-strip sans">
+          <span class="chip">Следующий: <b>ПСЖ — Рома</b> · 25 ноября · 23:00 МСК</span>
+        </div>
+      </div>
+    </article>
+  </section>
+
+  <section class="block">
+    <div class="sec-label sans">Наши в Европе</div>
+    <h2 class="sec-title">Остальные легионеры</h2>
+    <div class="rule"></div>
+
+    <div class="grid-3">
+      <article class="card">
+        <div class="thumb placeholder sans" aria-hidden="true">НК</div>
+        <div class="body">
+          <h4>Никита Хайкин</h4>
+          <div class="club sans">Будё/Глимт · вратарь</div>
+          <p>«Будё/Глимт» — «Лилль» <strong>0:0</strong>. Отыграл весь матч. УЕФА отметила его сейв после удара Баквы.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="thumb">
+          <img src="assets/golovin.jpg" alt="Александр Головин" width="516" height="774">
+        </div>
+        <div class="body">
+          <h4>Александр Головин</h4>
+          <div class="club sans">Монако · полузащитник</div>
+          <p>«Пари» — «Монако» <strong>3:1</strong>. Головин провёл на поле все <strong>90 минут</strong>. Голов и передач не было.</p>
+        </div>
+      </article>
+
+      <article class="card">
+        <div class="thumb placeholder sans" aria-hidden="true">АЗ</div>
+        <div class="body">
+          <h4>Арсен Захарян</h4>
+          <div class="club sans">Реал Сосьедад</div>
+          <p>Пропустил дерби с «Атлетиком». Уже вернулся к тренировкам; рассчитывал сыграть с «Лионом» в ЛЕ 5 ноября.</p>
+        </div>
+      </article>
+    </div>
+
+    <div class="grid-2" style="margin-top:18px">
+      <article class="card">
+        <div class="thumb placeholder sans" aria-hidden="true">СП</div>
+        <div class="body">
+          <h4>Сергей Пиняев</h4>
+          <div class="club sans">Локомотив Москва</div>
+          <p>«Локомотив» — «Спартак» <strong>0:4</strong>. Вышел на замену на <strong>55-й</strong> минуте. Трансферных слухов нет. «Локо» — 14-е место, 11 очков.</p>
+        </div>
+      </article>
+      <article class="card">
+        <div class="thumb placeholder sans" aria-hidden="true">ФЧ</div>
+        <div class="body">
+          <h4>Фёдор Чалов</h4>
+          <div class="club sans">ПАОК · нападающий</div>
+          <p>Восстанавливается после операции на мениске. Ожидаемое возвращение — около начала 2027 года.</p>
+        </div>
+      </article>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="sec-label sans">MLS · Кипр</div>
+    <h2 class="sec-title">Миранчук и «Красава»</h2>
+    <div class="rule"></div>
+
+    <article class="feature">
+      <div class="f-photo">
+        <img src="assets/miranchuk.jpg" alt="Алексей Миранчук" width="900" height="1350">
+      </div>
+      <div class="f-body">
+        <h3>Гол + передача в Атланте</h3>
+        <div class="f-meta sans">Atlanta United · полузащитник</div>
+        <p>«Атланта» обыграла «Торонто» <strong>3:1</strong>. Миранчук отдал голевую передачу и забил сам. За сезон у него уже <strong>7 голов</strong>.</p>
+        <div class="stats sans">
+          <div class="stat"><b>1+1</b><small>гол + пас</small></div>
+          <div class="stat"><b>7</b><small>голов за сезон</small></div>
+          <div class="stat"><b>3:1</b><small>vs Toronto</small></div>
+        </div>
+      </div>
+    </article>
+
+    <div class="scores" style="margin-top:20px">
+      <div class="score-card sans">
+        <div class="comp">Кипр · 31 октября</div>
+        <div class="line"><span>Красава — АЕК Ларнака</span><span class="res">2:2</span></div>
+        <p style="margin-top:8px;font-size:12px;color:var(--muted)">14-е место · 5 очков</p>
+      </div>
+      <div class="score-card sans">
+        <div class="comp">Следующий матч</div>
+        <div class="line"><span>АЕЛ — Красава</span><span class="res" style="font-size:1rem;color:var(--gold-soft)">7.11</span></div>
+        <p style="margin-top:8px;font-size:12px;color:var(--muted)">17:00 МСК · в гостях</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="sec-label sans">Россия</div>
+    <h2 class="sec-title">Таблица РПЛ</h2>
+    <div class="rule"></div>
+    <div class="table-wrap">
+      <table class="standings sans">
+        <thead>
+          <tr><th>#</th><th>Клуб</th><th>Очки</th><th>Заметка</th></tr>
+        </thead>
+        <tbody>
+          <tr><td class="hi">1</td><td>Зенит</td><td class="hi">30</td><td>лидер</td></tr>
+          <tr><td>2</td><td>Динамо</td><td>28</td><td></td></tr>
+          <tr><td>3</td><td>ЦСКА</td><td>26</td><td></td></tr>
+          <tr><td>4</td><td>Спартак</td><td>26</td><td></td></tr>
+          <tr><td class="dim">14</td><td class="dim">Локомотив</td><td class="dim">11</td><td class="dim">Пиняев</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <section class="sources">
+    <div class="sec-label sans">Источники</div>
+    <h2 class="sec-title" style="font-size:1.5rem;margin-bottom:16px">Куда смотреть дальше</h2>
+    <ul class="sans">
+      <li><a href="https://www.uefa.com/uefachampionsleague/news/02ab-21fc4afdbe57-11bbecf54b40-1000--champions-league-round-up-paris-remain-perfect-as-barcelo/" target="_blank" rel="noopener">УЕФА — итоги тура Лиги чемпионов</a></li>
+      <li><a href="https://ria.ru/20261103/batrakov-2129081536.html" target="_blank" rel="noopener">РИА Новости — дубль Батракова</a></li>
+      <li><a href="https://www.leparisien.fr/sports/football/ligue-des-champions/villarreal-psg-0-6-les-notes-des-joueurs-parisiens-avec-un-ruiz-dominant-et-double-buteur-03-11-2026-XB5IJOGC2JFARKRAYWOT3M3IXQ.php" target="_blank" rel="noopener">Le Parisien — оценки игроков ПСЖ</a></li>
+      <li><a href="https://www.sport-express.net/football/rfpl/news/chempionat-rossii-po-futbolu-turnirnaya-tablica-rpl-posle-13-tura-2-noyabrya-2026-2470189/" target="_blank" rel="noopener">Спорт-Экспресс — таблица РПЛ после 13-го тура</a></li>
+    </ul>
+    <p style="margin-top:22px;font-size:12px;color:var(--muted)" class="sans">
+      Фото: Wikimedia Commons — Batrakov_Gala2026.jpg (CC0), Safonov_asse_psg_2425.png (CC0),
+      Aleksandr_Golovin.jpg (CC BY-SA 3.0 · Кирилл Венедиктов),
+      Aleksei_Miranchuk_Red_Bull_Atlanta_5.31.25-105.jpg (CC BY-SA 4.0 · Bryan Berlin).
+    </p>
+  </section>
+</main>
+
+<footer class="colophon sans">
+  <div>ФУТБОЛЬНЫЙ ЖУРНАЛ · 1–4 НОЯБРЯ 2026</div>
+  <div>ОНЛАЙН-ВЫПУСК · ДЛЯ НИКИТЫ</div>
+</footer>
+
+</body>
+</html>
