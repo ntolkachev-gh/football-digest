@@ -3,10 +3,10 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>Футбольный журнал — россияне в Европе и РПЛ · 4–7 ноября 2026</title>
-<link rel="icon" href="assets/favicon.svg?v=1794062517" type="image/svg+xml">
-<link rel="icon" href="assets/favicon-32.png?v=1794062517" sizes="32x32" type="image/png">
-<link rel="apple-touch-icon" href="assets/apple-touch-icon.png?v=1794062517" sizes="180x180">
+<title>Футбольный журнал — россияне в Европе и РПЛ · 7–10 ноября 2026</title>
+<link rel="icon" href="assets/favicon.svg?v=1794330000" type="image/svg+xml">
+<link rel="icon" href="assets/favicon-32.png?v=1794330000" sizes="32x32" type="image/png">
+<link rel="apple-touch-icon" href="assets/apple-touch-icon.png?v=1794330000" sizes="180x180">
 <meta name="theme-color" content="#ffffff">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -883,66 +883,115 @@
     .statline > div:nth-child(n+3) { border-top: 1px solid var(--line); }
     .marks .flag { width: 24px; height: 16px; } .marks .lg { width: 28px; height: 28px; }
   }
+
+  /* === ISSUE 1110 additions === */
+  .press { display:grid; grid-template-columns:repeat(auto-fit,minmax(280px,1fr)); gap:16px; }
+  .press-card { background:#fff; border:1px solid var(--line); border-radius:8px; padding:18px 20px; display:flex; flex-direction:column; gap:10px; min-width:0; }
+  .press-card .src { font-family:var(--ui); font-size:12px; font-weight:800; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); display:flex; align-items:center; gap:8px; flex-wrap:wrap; }
+  .press-card .src .flag { margin:0; width:22px; height:15px; }
+  .press-card blockquote { font-family:var(--body); font-style:italic; font-size:1.02rem; line-height:1.5; color:var(--paper); border-left:3px solid var(--crimson); padding-left:12px; }
+  .press-card .orig { font-family:var(--ui); font-size:12px; color:var(--muted); line-height:1.45; }
+  .press-card .who { font-family:var(--ui); font-size:13px; color:var(--paper-2); }
+  .dossier.items-only .dossier-item { padding:18px; }
+  .dossier.items-only .dossier-item:last-child { border-bottom:1px solid var(--line); padding-bottom:18px; }
+  .dossier .note-sm { margin-top:8px; font-family:var(--ui); font-size:12px; color:var(--muted); }
+  table.standings td.num, table.standings th.num { text-align:center; white-space:nowrap; }
+  table.standings tr.sep td { padding:6px 10px; color:var(--muted); font-family:var(--ui); font-size:12px; text-align:center; background:#fafbfc; }
+  table.standings tr.mine td { background:#f7f9fc; }
+  table.standings td .tag { display:inline-block; font-size:11px; font-weight:700; padding:2px 7px; border-radius:10px; background:#eef1f5; color:var(--paper-2); white-space:nowrap; }
+  table.standings td .tag.w { background:#e7f5ec; color:#17643a; }
+  table.standings td .tag.l { background:#fdecee; color:#9b1c2c; }
+  table.standings td .tag.d { background:#eef1f5; color:#3d4350; }
+  .lead-list { margin-top:6px; padding-left:0; list-style:none; font-family:var(--ui); font-size:14px; color:var(--paper-2); line-height:1.5; }
+  .lead-list li { padding:4px 0 4px 16px; position:relative; }
+  .lead-list li::before { content:""; position:absolute; left:0; top:12px; width:6px; height:6px; border-radius:50%; background:var(--crimson); }
+  .intro-text { color:var(--paper-2); font-size:1.02rem; max-width:70ch; margin:0 0 18px; }
+  @media (max-width: 860px) { table.standings th, table.standings td { padding:10px 6px; } table.standings { font-size:13px; } }
+  .sec-title { overflow-wrap: break-word !important; hyphens: manual; }
+  .press { grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)) !important; }
+  @media (min-width: 900px) { .sources ul { max-width: none; columns: 2; column-gap: 48px; } .sources li { break-inside: avoid; } }
+  @media (max-width: 600px) { table.standings .opt { display: none; } .press { grid-template-columns: 1fr !important; } }
+  .story-body p:first-of-type::first-letter { font-family:inherit; font-weight:inherit; font-size:inherit; float:none; line-height:inherit; padding:0; color:inherit; }
 </style>
 </head>
 <body>
 
 <header class="masthead ui">
-  <div class="brand"><span>Выпуск №48</span>Футбольный журнал</div>
+  <div class="brand"><span>Выпуск №49</span>Футбольный журнал</div>
   <div class="mark">Ф</div>
-  <div class="issue"><b>4–7 ноября 2026</b><br>для Никиты · онлайн</div>
+  <div class="issue"><b>7–10 ноября 2026</b><br>для Никиты · онлайн</div>
 </header>
 
 <section class="cover">
   <div class="cover-photo">
-    <img src="assets/batrakov-hero.jpg?v=1794062517" alt="Алексей Батраков" width="1100" height="618">
+    <img src="assets/batrakov-hero-1110.jpg?v=1794330000" alt="Алексей Батраков" width="1024" height="576">
   </div>
   <div class="cover-copy">
-    <div class="kicker">Герой номера · Команда недели ЛЧ</div>
-    <h1>Батраков<em> в сборной</em><br>тура УЕФА</h1>
-    <p class="cover-lead">После дубля «Штутгарту» — место в команде недели Лиги чемпионов. Третий в голосовании за игрока тура.</p>
+    <div class="kicker">Герой номера · Суперлига Турции</div>
+    <h1>Батраков<em> забивает</em><br>третий матч подряд</h1>
+    <p class="cover-lead">Гол и вынужденный автогол в 4:3 с «Амедом» — «Галатасарай» ушёл на паузу лидером. Сафонов — второй «сухарь» подряд, Хайкин тоже на ноль, а Головин травмирован и пропустит сборную.</p>
     <div class="scoreboard">
-      <div class="score score-text">Команда недели</div>
+      <div class="score">4:3</div>
       <div class="meta ui">
-        <b class="club-with-crest"><img src="assets/crests/galatasaray.png?v=1794062517" alt="" width="32" height="32" class="crest" loading="lazy">Галатасарай</b>
-        ЛЧ · 5 ноября<br>4 гола в 4 матчах
+        <b class="club-with-crest"><img src="assets/crests/galatasaray.png?v=1794330000" alt="" width="32" height="32" class="crest">Галатасарай — <img src="assets/crests/amed.png?v=1794330000" alt="" width="32" height="32" class="crest">Амед</b>
+        7 ноября · 11-й тур<br>Батраков: гол (59′), 83 минуты
       </div>
     </div>
   </div>
 </section>
 
 <figure class="pull">
-  <blockquote>«Заехали в Вильярреал за 3 очками. Прекрасный счёт для тенниса. Ну и для выездной победы в Лиге чемпионов»</blockquote>
-  <cite>Матвей Сафонов · Telegram</cite>
+  <blockquote>«Не самая лучшая, наверное, наша игра, но три очка из трёх… Теперь в сборную. Продолжать выигрывать, надеюсь»</blockquote>
+  <cite>Матвей Сафонов · Telegram, после 1:0 с «Труа»</cite>
 </figure>
 
 <main class="wrap">
 
   <section class="block">
     <div class="sec-head">
+      <div class="sec-num">00</div>
+      <div>
+        <div class="sec-label">Коротко</div>
+        <h2 class="sec-title">Главное за 7–10 ноября<span class="marks"><img src="assets/flags/tr.png?v=1794330000" alt="" class="flag" width="24" height="16"><img src="assets/flags/fr.png?v=1794330000" alt="" class="flag" width="24" height="16"><img src="assets/flags/no.png?v=1794330000" alt="" class="flag" width="24" height="16"><img src="assets/flags/ru.png?v=1794330000" alt="" class="flag" width="24" height="16"><img src="assets/comps/ucl.png?v=1794330000" alt="" class="lg" width="28" height="28"></span></h2>
+      </div>
+    </div>
+
+    <ul class="lead-list">
+      <li><b>Батраков</b> забил «Амеду» (4:3) — третий матч подряд с голом; 6 голов + 3 передачи в 13 матчах за «Галатасарай», команда — 1-я с 28 очками.</li>
+      <li><b>Сафонов</b>: «ПСЖ» — «Труа» 1:0, 3 сейва, второй сухой матч подряд; «ПСЖ» лидирует в Лиге 1 (23 очка) и в ЛЧ.</li>
+      <li><b>Головин</b> ушёл на 54-й минуте с травмой правой икры («Ле-Ман» — «Монако» 1:1) и пропустит матчи сборной.</li>
+      <li><b>Хайкин</b>: «Тромсё» — «Будё/Глимт» 0:2, 3 сейва; в гонке за титул «Будё» и «Викинг» сравнялись — по 62 очка.</li>
+      <li><b>Захарян</b> весь матч в запасе (1:0 с «Райо»); <b>Миранчук</b> закончил сезон MLS поражением 0:3, «Атланта» без плей-офф.</li>
+      <li><b>РПЛ</b>: «Зенит» и «Динамо» — по 31 очку, «Локомотив» 15-й. «Ротор» — 1:1 с «Ленинградцем», «Красава» проиграла АЕЛ 1:3.</li>
+      <li><b>ЛЧ</b>: в эти дни матчей не было — 5-й тур 24–25 ноября. Впереди — сборная: Узбекистан — Россия, 12 ноября, 18:00 МСК.</li>
+    </ul>
+  </section>
+
+  <section class="block">
+    <div class="sec-head">
       <div class="sec-num">01</div>
       <div>
         <div class="sec-label">Обложка</div>
-        <h2 class="sec-title">Алексей Батраков · Галатасарай<span class="marks"><img src="assets/flags/tr.png?v=1794062517" alt="" class="flag" width="24" height="16"><img src="assets/comps/ucl.png?v=1794062517" alt="" class="lg" width="28" height="28"></span></h2>
+        <h2 class="sec-title">Алексей Батраков · Галатасарай<span class="marks"><img src="assets/flags/tr.png?v=1794330000" alt="" class="flag" width="24" height="16"><img src="assets/comps/superlig.png?v=1794330000" alt="" class="lg" width="28" height="28"><img src="assets/comps/ucl.png?v=1794330000" alt="" class="lg" width="28" height="28"></span></h2>
       </div>
     </div>
 
     <article class="story">
       <div class="story-photo">
-        <img src="assets/batrakov.jpg?v=1794062517" alt="Алексей Батраков" width="1200" height="675">
+        <img src="assets/batrakov-1110.jpg?v=1794330000" alt="Алексей Батраков" width="900" height="675">
       </div>
       <div class="story-body">
-        <h3>Команда недели УЕФА</h3>
-        <div class="story-meta"><img src="assets/crests/galatasaray.png?v=1794062517" alt="" width="32" height="32" class="crest" loading="lazy">Галатасарай · атакующий полузащитник</div>
-        <p>5 ноября УЕФА включила Батракова в <strong>команду недели</strong> после дубля <img src="assets/crests/stuttgart.png?v=1794062517" alt="" width="32" height="32" class="crest" loading="lazy">«Штутгарту» (2:0). В голосовании за игрока тура он занял <strong>третье место</strong> — впереди Тасос Дувикас («Комо») и Каспер Йоргенсен (<img src="assets/crests/lask.png?v=1794062517" alt="" width="32" height="32" class="crest" loading="lazy">ЛАСК).</p>
-        <p>Клубный сайт: самый молодой автор дубля в ЛЧ в истории <img src="assets/crests/galatasaray.png?v=1794062517" alt="" width="32" height="32" class="crest" loading="lazy">«Галатасарая», первый россиянин с дублем в ЛЧ за зарубежный клуб после Павлюченко, первый хавбек клуба с голами в трёх матчах ЛЧ подряд. Fanatik: «великая честь».</p>
+        <h3>Удар из-за штрафной и серия</h3>
+        <div class="story-meta"><img src="assets/crests/galatasaray.png?v=1794330000" alt="" width="32" height="32" class="crest">Галатасарай · атакующий полузащитник</div>
+        <p>7 ноября <img src="assets/crests/galatasaray.png?v=1794330000" alt="" width="32" height="32" class="crest">«Галатасарай» дома обыграл <img src="assets/crests/amed.png?v=1794330000" alt="" width="32" height="32" class="crest">«Амед» <strong>4:3</strong>. Батраков вышел в старте и отыграл <strong>83 минуты</strong>: на 59-й забил ударом из-за штрафной с рикошетом (3:0), а в конце первого тайма его удар-прострел вратарь Альбан Лафон срезал в свои ворота.</p>
+        <p>Это его <strong>третий матч подряд с голом</strong> (после «Коньяспора» и дубля «Штутгарту»). За «Галатасарай» — <strong>6 голов и 3 передачи в 13 матчах</strong>. Пятая победа подряд, 28 очков и 1-е место, «Амед» — 2-й (23).</p>
         <div class="statline">
-          <div><b class="txt">В сборной</b><small>команда недели УЕФА</small></div>
-          <div><b>3-й</b><small>игрок тура</small></div>
-          <div><b>4/4</b><small>голы / матчи ЛЧ</small></div>
-          <div><b>18</b><small>место · 6 очков</small></div>
+          <div><b>1</b><small>гол</small></div>
+          <div><b>83′</b><small>минуты</small></div>
+          <div><b>6+3</b><small>гол+пас · 13 матчей</small></div>
+          <div><b>1</b><small>место · 28 очков</small></div>
         </div>
-        <div class="fixture">Следующий ЛЧ: <b><img src="assets/crests/galatasaray.png?v=1794062517" alt="" width="32" height="32" class="crest" loading="lazy">Галатасарай — <img src="assets/crests/villa.png?v=1794062517" alt="" width="32" height="32" class="crest" loading="lazy">Астон Вилла</b> · 24 ноября ≈20:45 МСК</div>
+        <div class="fixture">Дальше: <b><img src="assets/crests/galatasaray.png?v=1794330000" alt="" width="32" height="32" class="crest">Галатасарай — <img src="assets/crests/samsunspor.png?v=1794330000" alt="" width="32" height="32" class="crest">Самсунспор</b> · 21 ноября, 16:00 МСК · ЛЧ: <b><img src="assets/crests/galatasaray.png?v=1794330000" alt="" width="32" height="32" class="crest">— <img src="assets/crests/villa.png?v=1794330000" alt="" width="32" height="32" class="crest">Астон Вилла</b> · 24 ноября, 20:45 МСК</div>
       </div>
     </article>
   </section>
@@ -952,25 +1001,26 @@
       <div class="sec-num">02</div>
       <div>
         <div class="sec-label">Вратарская рубрика</div>
-        <h2 class="sec-title">Матвей Сафонов · ПСЖ<span class="marks"><img src="assets/flags/fr.png?v=1794062517" alt="" class="flag" width="24" height="16"><img src="assets/comps/ligue1.png?v=1794062517" alt="" class="lg" width="28" height="28"><img src="assets/comps/ucl.png?v=1794062517" alt="" class="lg" width="28" height="28"></span></h2>
+        <h2 class="sec-title">Матвей Сафонов · ПСЖ<span class="marks"><img src="assets/flags/fr.png?v=1794330000" alt="" class="flag" width="24" height="16"><img src="assets/comps/ligue1.png?v=1794330000" alt="" class="lg" width="28" height="28"><img src="assets/comps/ucl.png?v=1794330000" alt="" class="lg" width="28" height="28"></span></h2>
       </div>
     </div>
 
     <article class="story flip">
       <div class="story-photo">
-        <img src="assets/safonov.jpg?v=1794062517" alt="Матвей Сафонов" width="1200" height="630">
+        <img src="assets/safonov-1110.jpg?v=1794330000" alt="Матвей Сафонов" width="840" height="630">
       </div>
       <div class="story-body">
-        <h3>«Прекрасный счёт для тенниса»</h3>
-        <div class="story-meta"><img src="assets/crests/psg.png?v=1794062517" alt="" width="32" height="32" class="crest" loading="lazy">Пари Сен-Жермен · вратарь</div>
-        <p>После разгрома <img src="assets/crests/villarreal.png?v=1794062517" alt="" width="32" height="32" class="crest" loading="lazy">«Вильярреала» <strong>0:6</strong> Сафонов в Telegram иронично сравнил счёт с теннисом. Сухой матч — первый «сухарь» россиянина в текущем розыгрыше ЛЧ; два сейва по отчёту клуба.</p>
-        <p><img src="assets/crests/psg.png?v=1794062517" alt="" width="32" height="32" class="crest" loading="lazy">ПСЖ — единоличный лидер общего этапа с <strong>12 очками</strong> из 12 и разницей +15. Следом — «Реал» (тоже 12, +6) и <img src="assets/crests/arsenal.png?v=1794062517" alt="" width="32" height="32" class="crest" loading="lazy">«Арсенал» (10).</p>
+        <h3>Второй «сухарь» подряд</h3>
+        <div class="story-meta"><img src="assets/crests/psg.png?v=1794330000" alt="" width="32" height="32" class="crest">Пари Сен-Жермен · вратарь</div>
+        <p>7 ноября (23:05 МСК) <img src="assets/crests/psg.png?v=1794330000" alt="" width="32" height="32" class="crest">«ПСЖ» дома обыграл <img src="assets/crests/troyes.png?v=1794330000" alt="" width="32" height="32" class="crest">«Труа» <strong>1:0</strong> — гол Ильи Забарного (39′). Сафонов отразил <strong>3 удара</strong>, точность передач 89,5%. Это его второй сухой матч подряд — впервые в сезоне.</p>
+        <p>Оценки: WhoScored и Sofascore — <strong>7,4</strong>, Flashscore — 7,5, «Индекс ГОЛа» Sports.ru — 7,3. Во французской прессе скромнее: L’Équipe — <strong>5</strong>, Le Parisien — <strong>5,5</strong> из 10. «ПСЖ» лидирует в Лиге 1 (23 очка), победная серия во всех турнирах — 11 матчей.</p>
         <div class="statline">
           <div><b>0</b><small>пропущено</small></div>
-          <div><b>2</b><small>сейва</small></div>
-          <div><b>12</b><small>очков ЛЧ · 1-е</small></div>
+          <div><b>3</b><small>сейва</small></div>
+          <div><b>7,4</b><small>WhoScored</small></div>
+          <div><b>23</b><small>очка · 1-е место</small></div>
         </div>
-        <div class="fixture">Следующий: <b><img src="assets/crests/psg.png?v=1794062517" alt="" width="32" height="32" class="crest" loading="lazy">ПСЖ — <img src="assets/crests/roma.png?v=1794062517" alt="" width="32" height="32" class="crest" loading="lazy">Рома</b> · 25 ноября · 23:00 МСК</div>
+        <div class="fixture">Сборная: в составе на матчи с Узбекистаном и Венесуэлой. Дальше в клубе: <b><img src="assets/crests/nice.png?v=1794330000" alt="" width="32" height="32" class="crest">Ницца — <img src="assets/crests/psg.png?v=1794330000" alt="" width="32" height="32" class="crest">ПСЖ</b> · 21 ноября · ЛЧ: <b><img src="assets/crests/psg.png?v=1794330000" alt="" width="32" height="32" class="crest">ПСЖ — <img src="assets/crests/roma.png?v=1794330000" alt="" width="32" height="32" class="crest">Рома</b> · 25 ноября, 23:00 МСК</div>
       </div>
     </article>
   </section>
@@ -979,68 +1029,54 @@
     <div class="sec-head">
       <div class="sec-num">03</div>
       <div>
-        <div class="sec-label">Наши в Европе</div>
-        <h2 class="sec-title">Легионеры за выходные<span class="marks"><img src="assets/flags/fr.png?v=1794062517" alt="" class="flag" width="24" height="16"><img src="assets/flags/no.png?v=1794062517" alt="" class="flag" width="24" height="16"><img src="assets/flags/es.png?v=1794062517" alt="" class="flag" width="24" height="16"><img src="assets/flags/gr.png?v=1794062517" alt="" class="flag" width="24" height="16"></span></h2>
+        <div class="sec-label">Лазарет</div>
+        <h2 class="sec-title">Александр Головин · Монако<span class="marks"><img src="assets/flags/fr.png?v=1794330000" alt="" class="flag" width="24" height="16"><img src="assets/comps/ligue1.png?v=1794330000" alt="" class="lg" width="28" height="28"></span></h2>
       </div>
     </div>
 
-    <div class="dossier">
-      <article class="dossier-lead">
-        <div class="portrait">
-          <img src="assets/golovin.jpg?v=1794062517" alt="Александр Головин" width="1200" height="675">
+    <article class="story">
+      <div class="story-photo">
+        <img src="assets/golovin-1110.jpg?v=1794330000" alt="Александр Головин" width="840" height="630">
+      </div>
+      <div class="story-body">
+        <h3>Травма икры и пропуск сборной</h3>
+        <div class="story-meta"><img src="assets/crests/monaco.png?v=1794330000" alt="" width="32" height="32" class="crest">Монако · полузащитник</div>
+        <p>8 ноября <img src="assets/crests/le-mans.png?v=1794330000" alt="" width="32" height="32" class="crest">«Ле-Ман» — <img src="assets/crests/monaco.png?v=1794330000" alt="" width="32" height="32" class="crest">«Монако» <strong>1:1</strong> (Кулибали, 40′; Кола, 90′). Головин вышел в старте, на 21-й минуте после его передачи Аблин забил, но гол отменили из-за офсайда. На <strong>54-й</strong> Александр попросил замену и, по данным RMC, позже прихрамывая ушёл в раздевалку.</p>
+        <p>Диагноз по данным ТАСС и Nice-Matin — <strong>повреждение правой икроножной мышцы</strong>. Матчи сборной с Узбекистаном и Венесуэлой он пропустит, срок восстановления не назван. В Лиге 1 у него 10 матчей и 3 передачи; «Монако» — 6-е (16 очков).</p>
+        <div class="statline">
+          <div><b>54′</b><small>минуты</small></div>
+          <div><b>1:1</b><small>с «Ле-Маном»</small></div>
+          <div><b class="txt">Икра</b><small>правая · срок ?</small></div>
         </div>
-        <h4>Александр Головин</h4>
-        <div class="club"><img src="assets/flags/fr.png?v=1794062517" alt="" class="flag" width="24" height="16"><img src="assets/crests/monaco.png?v=1794062517" alt="" width="32" height="32" class="crest" loading="lazy">Монако · полузащитник</div>
-        <p><img src="assets/crests/monaco.png?v=1794062517" alt="" width="32" height="32" class="crest" loading="lazy">«Монако» — <img src="assets/crests/nordsjaelland.png?v=1794062517" alt="" width="32" height="32" class="crest" loading="lazy">«Норшелланн» <strong>2:0</strong> (ЛК, 5 ноября). Головин вышел на <strong>58-й</strong> минуте, без голевых действий. Монегаски — 9 очков, 4-е место в таблице ЛК. 8 ноября — выезд к «Ле Ману» в Лиге 1.</p>
-      </article>
-
-      <article class="dossier-item">
-        <div class="mono-mark">НК</div>
-        <h4>Никита Хайкин</h4>
-        <div class="club"><img src="assets/flags/no.png?v=1794062517" alt="" class="flag" width="24" height="16"><img src="assets/crests/bodo.png?v=1794062517" alt="" width="32" height="32" class="crest" loading="lazy">Будё/Глимт · вратарь</div>
-        <p>После домашнего <strong>0:0</strong> с <img src="assets/crests/lille.png?v=1794062517" alt="" width="32" height="32" class="crest" loading="lazy">«Лиллем» (сухарь, 2 сейва) новых матчей в окне не было. У клуба 4 очка в ЛЧ. Следующий: дома с <img src="assets/crests/lask.png?v=1794062517" alt="" width="32" height="32" class="crest" loading="lazy">ЛАСК · 24 ноября.</p>
-      </article>
-
-      <article class="dossier-item">
-        <div class="mono-mark">АЗ</div>
-        <h4>Арсен Захарян</h4>
-        <div class="club"><img src="assets/flags/es.png?v=1794062517" alt="" class="flag" width="24" height="16"><img src="assets/crests/sociedad.png?v=1794062517" alt="" width="32" height="32" class="crest" loading="lazy">Реал Сосьедад</div>
-        <p>После повреждения голеностопа клуб заявил: 7 ноября — возвращение в <strong>общую группу</strong> без ограничений. Расчёт — на матч с <img src="assets/crests/rayo.png?v=1794062517" alt="" width="32" height="32" class="crest" loading="lazy">«Райо Вальекано» <strong>8 ноября · 18:15 МСК</strong>. В сборную России на ноябрь не вызван.</p>
-      </article>
-
-      <article class="dossier-item">
-        <div class="mono-mark">ФЧ</div>
-        <h4>Фёдор Чалов</h4>
-        <div class="club"><img src="assets/flags/gr.png?v=1794062517" alt="" class="flag" width="24" height="16"><img src="assets/crests/paok.png?v=1794062517" alt="" width="32" height="32" class="crest" loading="lazy">ПАОК · нападающий</div>
-        <p>По-прежнему вне состава после операции на мениске (июль 2026). Ориентир возвращения — <strong>начало 2027</strong>. Свежих заявлений клуба за окно не было.</p>
-      </article>
-    </div>
+      </div>
+    </article>
   </section>
 
   <section class="block">
     <div class="sec-head">
       <div class="sec-num">04</div>
       <div>
-        <div class="sec-label">РПЛ · кризис</div>
-        <h2 class="sec-title">Пиняев и «Локомотив»<span class="marks"><img src="assets/flags/ru.png?v=1794062517" alt="" class="flag" width="24" height="16"><img src="assets/comps/rpl.png?v=1794062517" alt="" class="lg" width="28" height="28"></span></h2>
+        <div class="sec-label">Норвегия</div>
+        <h2 class="sec-title">Никита Хайкин · Будё/Глимт<span class="marks"><img src="assets/flags/no.png?v=1794330000" alt="" class="flag" width="24" height="16"><img src="assets/comps/eliteserien.png?v=1794330000" alt="" class="lg" width="28" height="28"><img src="assets/comps/ucl.png?v=1794330000" alt="" class="lg" width="28" height="28"></span></h2>
       </div>
     </div>
 
-    <article class="story">
+    <article class="story flip">
       <div class="story-photo">
-        <img src="assets/pinyaev.jpg?v=1794062517" alt="Матч Локомотив — Рубин" width="1200" height="675">
+        <img src="assets/glimt-1110.jpg?v=1794330000" alt="Будё/Глимт" width="1200" height="900">
       </div>
       <div class="story-body">
-        <h3>0:1 и зона вылета</h3>
-        <div class="story-meta"><img src="assets/crests/lokomotiv.png?v=1794062517" alt="" width="32" height="32" class="crest" loading="lazy">Локомотив Москва · полузащитник</div>
-        <p>6 ноября <img src="assets/crests/lokomotiv.png?v=1794062517" alt="" width="32" height="32" class="crest" loading="lazy">«Локо» дома уступил <img src="assets/crests/rubin.png?v=1794062517" alt="" width="32" height="32" class="crest" loading="lazy">«Рубину» <strong>0:1</strong> (гол Тесленко, 71'). Пиняев вышел в <strong>старте</strong>, провёл первый тайм (удар выше ворот на 23'), на 46-й заменён на Бакаева.</p>
-        <p>С <strong>11 очками</strong> железнодорожники опустились на <strong>15-е место</strong> — зона прямого вылета. В тот же вечер клуб <strong>уволил</strong> Михаила Галактионова. Трансферных слухов по Пиняеву в окне нет.</p>
+        <h3>«Сухарь» в скандальном матче</h3>
+        <div class="story-meta"><img src="assets/crests/bodo.png?v=1794330000" alt="" width="32" height="32" class="crest">Будё/Глимт · вратарь</div>
+        <p>8 ноября <img src="assets/crests/tromso.png?v=1794330000" alt="" width="32" height="32" class="crest">«Тромсё» — <img src="assets/crests/bodo.png?v=1794330000" alt="" width="32" height="32" class="crest">«Будё/Глимт» <strong>0:2</strong>: дубль вышедшего на замену Олы Брюнхильдсена. Хайкин сыграл 90 минут, <strong>3 сейва</strong>, второй сухой матч подряд; оценка FotMob — <strong>8,0</strong>. На 40-й минуте игру надолго остановили: обрушилась часть трибуны с фанатами «Будё», одного болельщика увезли в больницу.</p>
+        <p>«Викинг» разгромил КФУМ (5:1), и после 26-го тура у лидеров по <strong>62 очка</strong>; «Викинг» выше на 2 мяча по разнице. Осталось четыре тура, финал сезона — 13 декабря. В ЛЧ у «Будё» 4 очка, 25-е место.</p>
         <div class="statline">
-          <div><b>0:1</b><small>vs <img src="assets/crests/rubin.png?v=1794062517" alt="" width="32" height="32" class="crest" loading="lazy">Рубин</small></div>
-          <div><b>45′</b><small>Пиняев</small></div>
-          <div><b>15</b><small>место · 11 очков</small></div>
+          <div><b>0</b><small>пропущено</small></div>
+          <div><b>3</b><small>сейва</small></div>
+          <div><b>8,0</b><small>FotMob</small></div>
+          <div><b>62</b><small>очка · 2-е</small></div>
         </div>
-        <div class="fixture">Следующий: <b><img src="assets/crests/lokomotiv.png?v=1794062517" alt="" width="32" height="32" class="crest" loading="lazy">Локомотив</b> в гостях у «Родины» · 22 ноября (после паузы сборных)</div>
+        <div class="fixture">Дальше: <b><img src="assets/crests/molde.png?v=1794330000" alt="" width="32" height="32" class="crest">Молде — <img src="assets/crests/bodo.png?v=1794330000" alt="" width="32" height="32" class="crest">Будё/Глимт</b> · 20 ноября, 21:00 МСК · ЛЧ: <b><img src="assets/crests/bodo.png?v=1794330000" alt="" width="32" height="32" class="crest">— <img src="assets/crests/lask.png?v=1794330000" alt="" width="32" height="32" class="crest">ЛАСК</b> · 24 ноября, 20:45 МСК</div>
       </div>
     </article>
   </section>
@@ -1049,66 +1085,88 @@
     <div class="sec-head">
       <div class="sec-num">05</div>
       <div>
-        <div class="sec-label">Лига 2 · Франция</div>
-        <h2 class="sec-title">Егор Пруцев · Дюнкерк<span class="marks"><img src="assets/flags/fr.png?v=1794062517" alt="" class="flag" width="24" height="16"><img src="assets/comps/ligue2.png?v=1794062517" alt="" class="lg" width="28" height="28"></span></h2>
+        <div class="sec-label">Иностранная пресса</div>
+        <h2 class="sec-title">Что пишут за рубежом<span class="marks"><img src="assets/flags/fr.png?v=1794330000" alt="" class="flag" width="24" height="16"><img src="assets/flags/tr.png?v=1794330000" alt="" class="flag" width="24" height="16"><img src="assets/flags/no.png?v=1794330000" alt="" class="flag" width="24" height="16"><img src="assets/flags/us.png?v=1794330000" alt="" class="flag" width="24" height="16"></span></h2>
       </div>
     </div>
 
-    <article class="story flip">
-      <div class="story-photo">
-        <img src="assets/prutsev.jpg?v=1794062517" alt="Егор Пруцев" width="800" height="1000">
-      </div>
-      <div class="story-body">
-        <h3>Старт и ассист в 3:0</h3>
-        <div class="story-meta"><img src="assets/crests/dunkerque.png?v=1794062517" alt="" width="32" height="32" class="crest" loading="lazy">USL Dunkerque · №11</div>
-        <p>6 ноября <img src="assets/crests/dunkerque.png?v=1794062517" alt="" width="32" height="32" class="crest" loading="lazy">«Дюнкерк» разгромил «Генгам» <strong>3:0</strong>. Пруцев — в старте, <strong>62 минуты</strong>, <strong>1 передача</strong>, оценка <strong>7,4</strong> (МАТЧ.РУ). La Voix du Nord отмечает вклад россиянина в розыгрыш первого гола Жордана Мореля (17').</p>
-        <p>В сезоне Лиги 2 у него теперь <strong>3 гола + 2 передачи</strong> в 12 матчах. Для клуба — первая «сухая» победа с февраля.</p>
-        <div class="statline">
-          <div><b>1</b><small>ассист</small></div>
-          <div><b>62′</b><small>минут</small></div>
-          <div><b>7,4</b><small>оценка</small></div>
-          <div><b>3+2</b><small>гол+пас · сезон</small></div>
-        </div>
-      </div>
-    </article>
+    <div class="press">
+      <article class="press-card">
+        <div class="src"><img src="assets/flags/fr.png?v=1794330000" alt="" class="flag" width="24" height="16">Le Parisien · Сафонов 5,5</div>
+        <blockquote>«Россиянина почти не беспокоили — четвёртый сухой матч в сезоне. Был внимателен после удара головой Рипара (29′)».</blockquote>
+        <div class="orig">L’Équipe — 5 из 10. <a href="https://www.leparisien.fr/sports/football/ligue-1/psg-troyes-1-0-les-notes-des-joueurs-parisiens-avec-zabarnyi-decisif-mayulu-incisif-et-torres-imprecis-07-11-2026-VM5TMBR7LVABLGXER7YE6XOVNU.php" target="_blank" rel="noopener">Le Parisien</a> · <a href="https://canal-supporters.com/psg-troyes-les-notes-des-parisiens-dans-la-presse-2/" target="_blank" rel="noopener">оценки прессы</a></div>
+      </article>
+      <article class="press-card">
+        <div class="src"><img src="assets/flags/tr.png?v=1794330000" alt="" class="flag" width="24" height="16">Fanatik · Батраков</div>
+        <blockquote>«Шоу Алексея Батракова! Его не остановить. Русская звезда в 9-й раз за последние 10 матчей отметилась результативным действием — 6 голов и 3 передачи».</blockquote>
+        <div class="orig">Fotomaç вынес в заголовок «Шоу Батракова и Барыша». <a href="https://www.fanatik.com.tr/galatasaray/galatasarayda-aleksey-batrakov-sov-durdurulamiyor-2643757" target="_blank" rel="noopener">Fanatik</a> · <a href="https://www.fotomac.com.tr/galatasaray/2026/11/08/batrakov-baris-sov" target="_blank" rel="noopener">Fotomaç</a></div>
+      </article>
+      <article class="press-card">
+        <div class="src"><img src="assets/flags/fr.png?v=1794330000" alt="" class="flag" width="24" height="16">Nice-Matin · Головин</div>
+        <blockquote>«Травма правой икроножной мышцы не позволит ему откликнуться на вызов в сборную России. Срок отсутствия пока не определён».</blockquote>
+        <div class="orig">Пересказ Get French Football News. Филипе Луис (сайт «Монако»): «…к тому же Головин попросил замену, поэтому я решил сделать сразу три перестановки». <a href="https://www.getfootballnewsfrance.com/2026/monacos-aleksandr-golovin-sustains-calf-injury/" target="_blank" rel="noopener">GFFN</a> · <a href="https://ria.ru/20261108/golovin-2130178816.html" target="_blank" rel="noopener">РИА</a></div>
+      </article>
+      <article class="press-card">
+        <div class="src"><img src="assets/flags/no.png?v=1794330000" alt="" class="flag" width="24" height="16">VG · Будё/Глимт</div>
+        <blockquote>«Обстановка вокруг матча стала скандалом, но на поле «Будё/Глимт» сохранил холодную голову».</blockquote>
+        <div class="orig">Хайкина VG отдельно не оценивала. <a href="https://www.vg.no/sport/i/GP1m4V/glimt-vant-skandalekamp-la-press-paa-viking-i-gullkampen" target="_blank" rel="noopener">VG</a></div>
+      </article>
+      <article class="press-card">
+        <div class="src"><img src="assets/flags/us.png?v=1794330000" alt="" class="flag" width="24" height="16">AP · сайт «Атланты»</div>
+        <blockquote>«Вратарь Джейден Хибберт сделал важные сейвы в начале, но «Атланта» позволила создать слишком много моментов, чтобы остаться в игре».</blockquote>
+        <div class="orig">Миранчука американские отчёты отдельно не выделяли. <a href="https://www.atlutd.com/news/match-recap-atlanta-united-falls-final-match-season-red-bull-new-york-november-2026" target="_blank" rel="noopener">atlutd.com</a> · <a href="https://apnews.com/article/atlanta-red-bulls-score-eb5312507c5b9c5799b3fabd0e84628a" target="_blank" rel="noopener">AP</a></div>
+      </article>
+    </div>
   </section>
 
-  <section class="block">
+  <section class="block" id="more-russians">
     <div class="sec-head">
       <div class="sec-num">06</div>
       <div>
-        <div class="sec-label">MLS · Кипр · ФНЛ</div>
-        <h2 class="sec-title">Миранчук · Красава · Ротор<span class="marks"><img src="assets/flags/us.png?v=1794062517" alt="" class="flag" width="24" height="16"><img src="assets/flags/cy.png?v=1794062517" alt="" class="flag" width="24" height="16"><img src="assets/flags/ru.png?v=1794062517" alt="" class="flag" width="24" height="16"><img src="assets/comps/fnl.png?v=1794062517" alt="" class="lg" width="28" height="28"></span></h2>
+        <div class="sec-label">Наши в Европе и мире</div>
+        <h2 class="sec-title">Остальные легионеры<span class="marks"><img src="assets/flags/es.png?v=1794330000" alt="" class="flag" width="24" height="16"><img src="assets/flags/gr.png?v=1794330000" alt="" class="flag" width="24" height="16"><img src="assets/flags/ru.png?v=1794330000" alt="" class="flag" width="24" height="16"><img src="assets/flags/us.png?v=1794330000" alt="" class="flag" width="24" height="16"><img src="assets/flags/cn.png?v=1794330000" alt="" class="flag" width="24" height="16"><img src="assets/flags/me.png?v=1794330000" alt="" class="flag" width="24" height="16"></span></h2>
       </div>
     </div>
 
-    <article class="story">
-      <div class="story-photo">
-        <img src="assets/miranchuk.jpg?v=1794062517" alt="Алексей Миранчук" width="900" height="1350">
-      </div>
-      <div class="story-body">
-        <h3>Финальный матч сезона</h3>
-        <div class="story-meta"><img src="assets/crests/atlanta.png?v=1794062517" alt="" width="32" height="32" class="crest" loading="lazy">Atlanta United · полузащитник</div>
-        <p>После гола+паса <img src="assets/crests/toronto.png?v=1794062517" alt="" width="32" height="32" class="crest" loading="lazy">«Торонто» (3:1) «Атланта» вне зоны плей-офф. Финал регулярки — <strong>с Red Bull New York</strong> ночью на 8 ноября по МСК (16:00 ET · 00:00 МСК). За сезон у Миранчука <strong>7 голов + 7 передач</strong> в 31 матче MLS.</p>
-      </div>
-    </article>
-
-    <div class="wire">
-      <div class="wire-item">
-        <div class="comp">Кипр · сегодня</div>
-        <div class="line"><span><img src="assets/crests/ael.png?v=1794062517" alt="" width="32" height="32" class="crest" loading="lazy">АЕЛ — <img src="assets/crests/krasava.png?v=1794062517" alt="" width="32" height="32" class="crest" loading="lazy">Красава</span><span class="res" style="color:var(--gold-soft);font-size:1.25rem">7.11</span></div>
-        <p class="note">≈17:00 МСК · 14-е место, 5 очков</p>
-      </div>
-      <div class="wire-item">
-        <div class="comp">ФНЛ · завтра</div>
-        <div class="line"><span><img src="assets/crests/rotor.png?v=1794062517" alt="" width="32" height="32" class="crest" loading="lazy">Ротор — <img src="assets/crests/leningradets.png?v=1794062517" alt="" width="32" height="32" class="crest" loading="lazy">Ленинградец</span><span class="res" style="color:var(--gold-soft);font-size:1.25rem">8.11</span></div>
-        <p class="note">16:00 МСК · 10-е, 20 очков · после 0:0 с «Уфой»</p>
-      </div>
-      <div class="wire-item">
-        <div class="comp">Захарян · Ла Лига</div>
-        <div class="line"><span><img src="assets/crests/sociedad.png?v=1794062517" alt="" width="32" height="32" class="crest" loading="lazy">Сосьедад — <img src="assets/crests/rayo.png?v=1794062517" alt="" width="32" height="32" class="crest" loading="lazy">Райо</span><span class="res" style="color:var(--gold-soft);font-size:1.25rem">8.11</span></div>
-        <p class="note">18:15 МСК · шанс на возвращение</p>
-      </div>
+    <div class="dossier items-only">
+      <article class="dossier-item">
+        <div class="mono-mark">АЗ</div>
+        <h4>Арсен Захарян</h4>
+        <div class="club"><img src="assets/flags/es.png?v=1794330000" alt="" class="flag" width="24" height="16"><img src="assets/crests/sociedad.png?v=1794330000" alt="" width="32" height="32" class="crest">Реал Сосьедад</div>
+        <p>8 ноября <img src="assets/crests/sociedad.png?v=1794330000" alt="" width="32" height="32" class="crest">«Сосьедад» — <img src="assets/crests/rayo.png?v=1794330000" alt="" width="32" height="32" class="crest">«Райо Вальекано» <strong>1:0</strong> (Оускарссон, 67′). Захарян, только что восстановившийся после травмы голеностопа, весь матч провёл <strong>в запасе</strong>. Команда — 5-я (22 очка).</p>
+      </article>
+      <article class="dossier-item">
+        <div class="mono-mark">ФЧ</div>
+        <h4>Фёдор Чалов</h4>
+        <div class="club"><img src="assets/flags/gr.png?v=1794330000" alt="" class="flag" width="24" height="16"><img src="assets/crests/paok.png?v=1794330000" alt="" width="32" height="32" class="crest">ПАОК · нападающий</div>
+        <p>Не в заявке — продолжается восстановление после операции на мениске (июль 2026). Ориентир возвращения — <strong>начало 2027</strong>; новых заявлений клуба за эти дни не было.</p>
+      </article>
+      <article class="dossier-item">
+        <div class="mono-mark">СП</div>
+        <h4>Сергей Пиняев</h4>
+        <div class="club"><img src="assets/flags/ru.png?v=1794330000" alt="" class="flag" width="24" height="16"><img src="assets/crests/lokomotiv.png?v=1794330000" alt="" width="32" height="32" class="crest">Локомотив · полузащитник</div>
+        <p>Матчей в эти дни не было (последний — 0:1 с «Рубином» 6 ноября). В итоговый состав сборной на ноябрь не попал. «Локо» 15-й, вопрос с увольнением Галактионова упёрся в спор о неустойке (60 млн ₽). <strong>Трансферных слухов нет.</strong></p>
+        <div class="note-sm">Дальше: <img src="assets/crests/rodina.png?v=1794330000" alt="" width="32" height="32" class="crest">Родина — <img src="assets/crests/lokomotiv.png?v=1794330000" alt="" width="32" height="32" class="crest">Локомотив · 22 ноября, 19:00 МСК</div>
+      </article>
+      <article class="dossier-item">
+        <div class="mono-mark">ЕП</div>
+        <h4>Егор Пруцев</h4>
+        <div class="club"><img src="assets/flags/fr.png?v=1794330000" alt="" class="flag" width="24" height="16"><img src="assets/crests/dunkerque.png?v=1794330000" alt="" width="32" height="32" class="crest">USL Dunkerque · Лига 2</div>
+        <p>В эти дни «Дюнкерк» не играл. Последний матч — 3:0 с «Генгамом» 6 ноября (передача, 62 минуты). В сезоне — <strong>3 гола + 2 передачи</strong> в 12 матчах. Новых материалов La Voix du Nord о нём нет.</p>
+        <div class="note-sm">Дальше: <img src="assets/crests/sochaux.png?v=1794330000" alt="" width="32" height="32" class="crest">Сошо — <img src="assets/crests/dunkerque.png?v=1794330000" alt="" width="32" height="32" class="crest">Дюнкерк · 23 ноября, 22:45 МСК</div>
+      </article>
+      <article class="dossier-item">
+        <div class="mono-mark">НИ</div>
+        <h4>Никита Иосифов</h4>
+        <div class="club"><img src="assets/flags/es.png?v=1794330000" alt="" class="flag" width="24" height="16"><img src="assets/crests/sporting-gijon.png?v=1794330000" alt="" width="32" height="32" class="crest">Спортинг Хихон · Сегунда</div>
+        <p>Первый выход за полтора месяца после травмы: на 73-й минуте при 0:2 против <img src="assets/crests/valladolid.png?v=1794330000" alt="" width="32" height="32" class="crest">«Вальядолида», сделал <strong>голевую передачу</strong>. Итог — 1:2.</p>
+      </article>
+      <article class="dossier-item">
+        <div class="mono-mark">+</div>
+        <h4>Коротко</h4>
+        <div class="club"><img src="assets/flags/us.png?v=1794330000" alt="" class="flag" width="24" height="16"><img src="assets/flags/cn.png?v=1794330000" alt="" class="flag" width="24" height="16"><img src="assets/flags/me.png?v=1794330000" alt="" class="flag" width="24" height="16">MLS · Китай · Черногория</div>
+        <p><b>Сулейманов</b> (<img src="assets/crests/skc.png?v=1794330000" alt="" width="32" height="32" class="crest">«Спортинг» Канзас-Сити) вышел в концовке победного матча. <b>Сорокин</b> (<img src="assets/crests/chengdu.png?v=1794330000" alt="" width="32" height="32" class="crest">«Чэнду Жунчэн») сыграл 90 минут в финальном туре — «Чэнду» упустил титул. <b>Сериков</b> (<img src="assets/crests/buducnost.png?v=1794330000" alt="" width="32" height="32" class="crest">«Будучность») — 90 минут, поражение от прямого конкурента. Подробных цифр нет.</p>
+      </article>
     </div>
   </section>
 
@@ -1116,64 +1174,160 @@
     <div class="sec-head">
       <div class="sec-num">07</div>
       <div>
-        <div class="sec-label">Еврокубки</div>
-        <h2 class="sec-title">ЛЧ после 4-го тура<span class="marks"><img src="assets/comps/ucl.png?v=1794062517" alt="" class="lg" width="28" height="28"></span></h2>
+        <div class="sec-label">MLS · Кипр</div>
+        <h2 class="sec-title">Миранчук и «Красава»<span class="marks"><img src="assets/flags/us.png?v=1794330000" alt="" class="flag" width="24" height="16"><img src="assets/comps/mls.png?v=1794330000" alt="" class="lg" width="28" height="28"><img src="assets/flags/cy.png?v=1794330000" alt="" class="flag" width="24" height="16"></span></h2>
       </div>
     </div>
-    <div class="table-wrap">
-      <table class="standings">
-        <thead>
-          <tr><th>#</th><th>Клуб</th><th>Очки</th><th>Заметка</th></tr>
-        </thead>
-        <tbody>
-          <tr><td class="hi">1</td><td><img src="assets/crests/psg.png?v=1794062517" alt="" width="32" height="32" class="crest" loading="lazy">ПСЖ</td><td class="hi">12</td><td>Сафонов · +15</td></tr>
-          <tr><td>2</td><td><img src="assets/crests/real-madrid.png?v=1794062517" alt="" width="32" height="32" class="crest" loading="lazy">Реал Мадрид</td><td>12</td><td>+6</td></tr>
-          <tr><td>3</td><td><img src="assets/crests/arsenal.png?v=1794062517" alt="" width="32" height="32" class="crest" loading="lazy">Арсенал</td><td>10</td><td></td></tr>
-          <tr><td>18</td><td><img src="assets/crests/galatasaray.png?v=1794062517" alt="" width="32" height="32" class="crest" loading="lazy">Галатасарай</td><td>6</td><td class="hi">Батраков</td></tr>
-          <tr><td class="dim">~22</td><td class="dim"><img src="assets/crests/bodo.png?v=1794062517" alt="" width="32" height="32" class="crest" loading="lazy">Будё/Глимт</td><td class="dim">4</td><td class="dim">Хайкин</td></tr>
-        </tbody>
-      </table>
-    </div>
-    <p style="margin-top:18px;color:var(--paper-2);font-size:1.02rem;max-width:52ch">Ключевые ответы 5-го тура: <img src="assets/crests/galatasaray.png?v=1794062517" alt="" width="32" height="32" class="crest" loading="lazy"><b>Галатасарай — <img src="assets/crests/villa.png?v=1794062517" alt="" width="32" height="32" class="crest" loading="lazy">Астон Вилла</b> (24.11), <img src="assets/crests/bodo.png?v=1794062517" alt="" width="32" height="32" class="crest" loading="lazy"><b>Будё — <img src="assets/crests/lask.png?v=1794062517" alt="" width="32" height="32" class="crest" loading="lazy">ЛАСК</b> (24.11), <img src="assets/crests/psg.png?v=1794062517" alt="" width="32" height="32" class="crest" loading="lazy"><b>ПСЖ — <img src="assets/crests/roma.png?v=1794062517" alt="" width="32" height="32" class="crest" loading="lazy">Рома</b> (25.11 · 23:00 МСК).</p>
+
+    <article class="story">
+      <div class="story-photo">
+        <img src="assets/krasava-1110.jpg?v=1794330000" alt="АЕЛ — Красава" width="837" height="627">
+      </div>
+      <div class="story-body">
+        <h3>«Красава» — последняя</h3>
+        <div class="story-meta"><img src="assets/crests/krasava.png?v=1794330000" alt="" width="32" height="32" class="crest">Krasava ENY Ypsonas · 1-й дивизион Кипра</div>
+        <p>7 ноября, 9-й тур: <img src="assets/crests/ael.png?v=1794330000" alt="" width="32" height="32" class="crest">АЕЛ — <img src="assets/crests/krasava.png?v=1794330000" alt="" width="32" height="32" class="crest">«Красава» <strong>3:1</strong>. Голы Сингха (33′), Каро (76′) и Жаира Тавареса (88′); у гостей отличился Пардо (81′). АЕЛ поднялась на 2-е место (18 очков), «Красава» осталась <strong>последней с 5 очками</strong>.</p>
+        <div class="fixture">Дальше: <b><img src="assets/crests/krasava.png?v=1794330000" alt="" width="32" height="32" class="crest">Красава — <img src="assets/crests/anorthosis.png?v=1794330000" alt="" width="32" height="32" class="crest">Анортосис</b> · 23 ноября, ≈20:00 МСК</div>
+        <h3 style="margin-top:28px">Миранчук: сезон окончен</h3>
+        <div class="story-meta"><img src="assets/crests/atlanta.png?v=1794330000" alt="" width="32" height="32" class="crest">Atlanta United · полузащитник</div>
+        <p>Последний тур регулярки (ночь на 8 ноября по МСК): <img src="assets/crests/nyrb.png?v=1794330000" alt="" width="32" height="32" class="crest">«Нью-Йорк Ред Буллз» — <img src="assets/crests/atlanta.png?v=1794330000" alt="" width="32" height="32" class="crest">«Атланта» <strong>3:0</strong>. Миранчук отыграл весь матч, без голевых действий. «Атланта» — 13-я на Востоке (33 очка) и в плей-офф MLS не попала. Итог сезона: <strong>7 голов + 7 передач в 32 матчах</strong>. Следующий старт — 20 февраля 2027 (переходный «спринт-сезон» перед сменой календаря MLS).</p>
+        <div class="statline">
+          <div><b>90′</b><small>минут</small></div>
+          <div><b>0:3</b><small>с «Нью-Йорком»</small></div>
+          <div><b>7+7</b><small>гол+пас · сезон</small></div>
+        </div>
+      </div>
+    </article>
   </section>
 
   <section class="block">
     <div class="sec-head">
       <div class="sec-num">08</div>
       <div>
-        <div class="sec-label">Россия</div>
-        <h2 class="sec-title">РПЛ · 14-й тур<span class="marks"><img src="assets/flags/ru.png?v=1794062517" alt="" class="flag" width="24" height="16"><img src="assets/comps/rpl.png?v=1794062517" alt="" class="lg" width="28" height="28"></span></h2>
+        <div class="sec-label">Лига PARI (ФНЛ)</div>
+        <h2 class="sec-title">«Ротор» · 17‑й тур<span class="marks"><img src="assets/flags/ru.png?v=1794330000" alt="" class="flag" width="24" height="16"><img src="assets/comps/fnl.png?v=1794330000" alt="" class="lg" width="28" height="28"></span></h2>
       </div>
     </div>
+
+    <p class="intro-text">8 ноября <img src="assets/crests/rotor.png?v=1794330000" alt="" width="32" height="32" class="crest">«Ротор» — <img src="assets/crests/leningradets.png?v=1794330000" alt="" width="32" height="32" class="crest">«Ленинградец» <strong>1:1</strong>. Гости повели (Першин, 18′), Эльдарушев сравнял (68′). На 90+4′ «Ротор» забил второй, но гол Трошечкина отменили за игру рукой. Вторая ничья подряд после 0:0 с «Уфой». «Ротор» — 21 очко, равенство с «Челябинском».</p>
     <div class="table-wrap">
       <table class="standings">
-        <thead>
-          <tr><th>#</th><th>Клуб</th><th>Очки</th><th>Заметка</th></tr>
-        </thead>
+        <thead><tr><th>#</th><th>Клуб</th><th class="num">И</th><th class="num">Мячи</th><th class="num">Очки</th></tr></thead>
         <tbody>
-          <tr><td class="hi">1</td><td><img src="assets/crests/zenit.png?v=1794062517" alt="" width="32" height="32" class="crest" loading="lazy">Зенит</td><td class="hi">30</td><td>лидер</td></tr>
-          <tr><td>2</td><td><img src="assets/crests/dynamo.png?v=1794062517" alt="" width="32" height="32" class="crest" loading="lazy">Динамо</td><td>28</td><td>сегодня у <img src="assets/crests/fakel.png?v=1794062517" alt="" width="32" height="32" class="crest" loading="lazy">«Факела»</td></tr>
-          <tr><td>3</td><td><img src="assets/crests/cska.png?v=1794062517" alt="" width="32" height="32" class="crest" loading="lazy">ЦСКА</td><td>26</td><td>сегодня у «Краснодара»</td></tr>
-          <tr><td>4</td><td><img src="assets/crests/spartak.png?v=1794062517" alt="" width="32" height="32" class="crest" loading="lazy">Спартак</td><td>26</td><td>завтра vs <img src="assets/crests/akron.png?v=1794062517" alt="" width="32" height="32" class="crest" loading="lazy">«Акрон»</td></tr>
-          <tr><td class="dim">15</td><td class="dim"><img src="assets/crests/lokomotiv.png?v=1794062517" alt="" width="32" height="32" class="crest" loading="lazy">Локомотив</td><td class="dim">11</td><td class="dim">зона вылета</td></tr>
+          <tr><td>1</td><td><img src="assets/crests/nizhny.png?v=1794330000" alt="" width="32" height="32" class="crest">Нижний Новгород</td><td class="num">17</td><td class="num">52–15</td><td class="num">46</td></tr>
+          <tr><td>2</td><td><img src="assets/crests/ural.png?v=1794330000" alt="" width="32" height="32" class="crest">Урал</td><td class="num">17</td><td class="num">29–11</td><td class="num">34</td></tr>
+          <tr><td>3</td><td><img src="assets/crests/sochi.png?v=1794330000" alt="" width="32" height="32" class="crest">Сочи</td><td class="num">17</td><td class="num">26–20</td><td class="num">32</td></tr>
+          <tr class="sep"><td colspan="5">…</td></tr>
+          <tr><td>9</td><td><img src="assets/crests/ufa.png?v=1794330000" alt="" width="32" height="32" class="crest">Уфа</td><td class="num">17</td><td class="num">19–17</td><td class="num">22</td></tr>
+          <tr><td>10</td><td><img src="assets/crests/chelyabinsk.png?v=1794330000" alt="" width="32" height="32" class="crest">Челябинск</td><td class="num">17</td><td class="num">23–27</td><td class="num">21</td></tr>
+          <tr class="mine"><td class="hi">11</td><td><b><img src="assets/crests/rotor.png?v=1794330000" alt="" width="32" height="32" class="crest">Ротор</b></td><td class="num">17</td><td class="num">24–19</td><td class="num hi">21</td></tr>
+          <tr><td>12</td><td><img src="assets/crests/arsenal-tula.png?v=1794330000" alt="" width="32" height="32" class="crest">Арсенал Тула</td><td class="num">17</td><td class="num">20–35</td><td class="num">19</td></tr>
+          <tr><td>13</td><td><img src="assets/crests/leningradets.png?v=1794330000" alt="" width="32" height="32" class="crest">Ленинградец</td><td class="num">17</td><td class="num">16–27</td><td class="num">18</td></tr>
         </tbody>
       </table>
     </div>
-    <div class="wire" style="margin-top:28px">
+    <p class="note-sm" style="margin-top:10px;font-family:var(--ui);font-size:12px;color:var(--muted)">Таблица «Спорт-Экспресса»; в тексте отчётов «Ротор» называют 10-м — у него и «Челябинска» по 21 очку.</p>
+    <div class="fixture">Дальше: <b><img src="assets/crests/ska-khabarovsk.png?v=1794330000" alt="" width="32" height="32" class="crest">СКА-Хабаровск — <img src="assets/crests/rotor.png?v=1794330000" alt="" width="32" height="32" class="crest">Ротор</b> · 21 ноября (время уточняется)</div>
+  </section>
+
+  <section class="block">
+    <div class="sec-head">
+      <div class="sec-num">09</div>
+      <div>
+        <div class="sec-label">Еврокубки</div>
+        <h2 class="sec-title">Лига чемпионов · пауза до 24 ноября<span class="marks"><img src="assets/comps/ucl.png?v=1794330000" alt="" class="lg" width="28" height="28"></span></h2>
+      </div>
+    </div>
+
+    <p class="intro-text">С 7 по 10 ноября матчей ЛЧ не было. Таблица после 4-го тура — с нашими клубами:</p>
+    <div class="table-wrap">
+      <table class="standings">
+        <thead><tr><th>#</th><th>Клуб</th><th class="num">И</th><th class="num">Мячи</th><th class="num">Очки</th><th class="opt">Россиянин</th></tr></thead>
+        <tbody>
+          <tr class="mine"><td class="hi">1</td><td><img src="assets/crests/psg.png?v=1794330000" alt="" width="32" height="32" class="crest">ПСЖ</td><td class="num">4</td><td class="num">20–5</td><td class="num hi">12</td><td class="opt">Сафонов</td></tr>
+          <tr><td>2</td><td><img src="assets/crests/real-madrid.png?v=1794330000" alt="" width="32" height="32" class="crest">Реал Мадрид</td><td class="num">4</td><td class="num">13–7</td><td class="num">12</td><td class="opt"></td></tr>
+          <tr><td>3</td><td><img src="assets/crests/arsenal.png?v=1794330000" alt="" width="32" height="32" class="crest">Арсенал</td><td class="num">4</td><td class="num">8–3</td><td class="num">10</td><td class="opt"></td></tr>
+          <tr><td>4</td><td><img src="assets/crests/como.png?v=1794330000" alt="" width="32" height="32" class="crest">Комо</td><td class="num">4</td><td class="num">19–6</td><td class="num">9</td><td class="opt"></td></tr>
+          <tr><td>5</td><td><img src="assets/crests/barcelona.png?v=1794330000" alt="" width="32" height="32" class="crest">Барселона</td><td class="num">4</td><td class="num">14–6</td><td class="num">9</td><td class="opt"></td></tr>
+          <tr><td>6</td><td><img src="assets/crests/villa.png?v=1794330000" alt="" width="32" height="32" class="crest">Астон Вилла</td><td class="num">4</td><td class="num">12–6</td><td class="num">9</td><td class="opt"></td></tr>
+          <tr><td>7</td><td><img src="assets/crests/man-city.png?v=1794330000" alt="" width="32" height="32" class="crest">Манчестер Сити</td><td class="num">4</td><td class="num">12–7</td><td class="num">9</td><td class="opt"></td></tr>
+          <tr><td>8</td><td><img src="assets/crests/liverpool.png?v=1794330000" alt="" width="32" height="32" class="crest">Ливерпуль</td><td class="num">4</td><td class="num">14–10</td><td class="num">9</td><td class="opt"></td></tr>
+          <tr class="sep"><td colspan="6">…</td></tr>
+          <tr><td>16</td><td><img src="assets/crests/lask.png?v=1794330000" alt="" width="32" height="32" class="crest">ЛАСК</td><td class="num">4</td><td class="num">10–9</td><td class="num">6</td><td class="opt"></td></tr>
+          <tr class="mine"><td class="hi">18</td><td><img src="assets/crests/galatasaray.png?v=1794330000" alt="" width="32" height="32" class="crest">Галатасарай</td><td class="num">4</td><td class="num">8–9</td><td class="num hi">6</td><td class="opt">Батраков</td></tr>
+          <tr><td>20</td><td><img src="assets/crests/roma.png?v=1794330000" alt="" width="32" height="32" class="crest">Рома</td><td class="num">4</td><td class="num">10–8</td><td class="num">4</td><td class="opt"></td></tr>
+          <tr class="mine"><td class="hi">25</td><td><img src="assets/crests/bodo.png?v=1794330000" alt="" width="32" height="32" class="crest">Будё/Глимт</td><td class="num">4</td><td class="num">4–9</td><td class="num hi">4</td><td class="opt">Хайкин</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <div class="wire" style="margin-top:24px">
       <div class="wire-item">
-        <div class="comp">Уже сыграно · 6.11</div>
-        <div class="line"><span><img src="assets/crests/lokomotiv.png?v=1794062517" alt="" width="32" height="32" class="crest" loading="lazy">Локомотив — <img src="assets/crests/rubin.png?v=1794062517" alt="" width="32" height="32" class="crest" loading="lazy">Рубин</span><span class="res">0:1</span></div>
-        <p class="note">Галактионов уволен</p>
+        <div class="comp">ЛЧ · 5-й тур · 24 ноября</div>
+        <div class="line"><span><img src="assets/crests/galatasaray.png?v=1794330000" alt="" width="32" height="32" class="crest">Галатасарай — <img src="assets/crests/villa.png?v=1794330000" alt="" width="32" height="32" class="crest">Астон Вилла</span><span class="res">20:45</span></div>
+        <p class="note">Батраков против 6-й команды таблицы</p>
       </div>
       <div class="wire-item">
-        <div class="comp">Сегодня · 7.11</div>
-        <div class="line"><span><img src="assets/crests/fakel.png?v=1794062517" alt="" width="32" height="32" class="crest" loading="lazy">Факел — <img src="assets/crests/dynamo.png?v=1794062517" alt="" width="32" height="32" class="crest" loading="lazy">Динамо</span><span class="res" style="color:var(--gold-soft);font-size:1.1rem">14:00</span></div>
-        <p class="note">Ахмат — Родина 16:30 · Краснодар — <img src="assets/crests/cska.png?v=1794062517" alt="" width="32" height="32" class="crest" loading="lazy">ЦСКА 19:30</p>
+        <div class="comp">ЛЧ · 5-й тур · 24 ноября</div>
+        <div class="line"><span><img src="assets/crests/bodo.png?v=1794330000" alt="" width="32" height="32" class="crest">Будё/Глимт — <img src="assets/crests/lask.png?v=1794330000" alt="" width="32" height="32" class="crest">ЛАСК</span><span class="res">20:45</span></div>
+        <p class="note">Хайкин; «Будё» — 25-е, на границе зоны плей-офф</p>
       </div>
       <div class="wire-item">
-        <div class="comp">Завтра · 8.11</div>
-        <div class="line"><span><img src="assets/crests/spartak.png?v=1794062517" alt="" width="32" height="32" class="crest" loading="lazy">Спартак — <img src="assets/crests/akron.png?v=1794062517" alt="" width="32" height="32" class="crest" loading="lazy">Акрон</span><span class="res" style="color:var(--gold-soft);font-size:1.1rem">16:15</span></div>
-        <p class="note">Крылья — Оренбург 14:00 · <img src="assets/crests/zenit.png?v=1794062517" alt="" width="32" height="32" class="crest" loading="lazy">Зенит — Ростов 18:30 · Балтика — Дин. Мх 20:45</p>
+        <div class="comp">ЛЧ · 5-й тур · 25 ноября</div>
+        <div class="line"><span><img src="assets/crests/psg.png?v=1794330000" alt="" width="32" height="32" class="crest">ПСЖ — <img src="assets/crests/roma.png?v=1794330000" alt="" width="32" height="32" class="crest">Рома</span><span class="res">23:00</span></div>
+        <p class="note">Сафонов; время московское</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block">
+    <div class="sec-head">
+      <div class="sec-num">10</div>
+      <div>
+        <div class="sec-label">Россия</div>
+        <h2 class="sec-title">РПЛ · итоги 14‑го тура<span class="marks"><img src="assets/flags/ru.png?v=1794330000" alt="" class="flag" width="24" height="16"><img src="assets/comps/rpl.png?v=1794330000" alt="" class="lg" width="28" height="28"></span></h2>
+      </div>
+    </div>
+
+    <p class="intro-text">«Динамо» вырвало победу у «Факела» (2:1, Тюкавин на 90+), «Зенит» дважды упустил преимущество с «Ростовом» (2:2) — теперь у лидеров по 31 очку, «Зенит» выше по личной встрече. «Краснодар» разгромил ЦСКА 4:2 (дубль Кордобы, 70-й гол в РПЛ — быстрее всех в истории). «Спартак» обыграл «Акрон» 2:1, но Максименко получил вторую красную за сезон.</p>
+    <div class="table-wrap">
+      <table class="standings">
+        <thead><tr><th>#</th><th>Клуб</th><th class="num">И</th><th class="num">Очки</th><th>14-й тур</th></tr></thead>
+        <tbody>
+          <tr><td class="hi">1</td><td><img src="assets/crests/zenit.png?v=1794330000" alt="" width="32" height="32" class="crest">Зенит</td><td class="num">14</td><td class="num hi">31</td><td><span class="tag d">2:2 Ростов</span></td></tr>
+          <tr><td class="hi">2</td><td><img src="assets/crests/dynamo.png?v=1794330000" alt="" width="32" height="32" class="crest">Динамо</td><td class="num">14</td><td class="num hi">31</td><td><span class="tag w">2:1 Факел (г)</span></td></tr>
+          <tr><td>3</td><td><img src="assets/crests/spartak.png?v=1794330000" alt="" width="32" height="32" class="crest">Спартак</td><td class="num">14</td><td class="num">29</td><td><span class="tag w">2:1 Акрон</span></td></tr>
+          <tr><td>4</td><td><img src="assets/crests/krasnodar.png?v=1794330000" alt="" width="32" height="32" class="crest">Краснодар</td><td class="num">14</td><td class="num">26</td><td><span class="tag w">4:2 ЦСКА</span></td></tr>
+          <tr><td>5</td><td><img src="assets/crests/cska.png?v=1794330000" alt="" width="32" height="32" class="crest">ЦСКА</td><td class="num">14</td><td class="num">26</td><td><span class="tag l">2:4 Краснодар (г)</span></td></tr>
+          <tr><td>6</td><td><img src="assets/crests/rostov.png?v=1794330000" alt="" width="32" height="32" class="crest">Ростов</td><td class="num">14</td><td class="num">19</td><td><span class="tag d">2:2 Зенит (г)</span></td></tr>
+          <tr><td>7</td><td><img src="assets/crests/krylia.png?v=1794330000" alt="" width="32" height="32" class="crest">Крылья Советов</td><td class="num">14</td><td class="num">18</td><td><span class="tag w">2:0 Оренбург</span></td></tr>
+          <tr><td>8</td><td><img src="assets/crests/rubin.png?v=1794330000" alt="" width="32" height="32" class="crest">Рубин</td><td class="num">14</td><td class="num">18</td><td><span class="tag w">1:0 Локомотив (г)</span></td></tr>
+          <tr><td>9</td><td><img src="assets/crests/baltika.png?v=1794330000" alt="" width="32" height="32" class="crest">Балтика</td><td class="num">14</td><td class="num">17</td><td><span class="tag l">0:1 Динамо Мх</span></td></tr>
+          <tr><td>10</td><td><img src="assets/crests/orenburg.png?v=1794330000" alt="" width="32" height="32" class="crest">Оренбург</td><td class="num">14</td><td class="num">17</td><td><span class="tag l">0:2 Крылья (г)</span></td></tr>
+          <tr><td>11</td><td><img src="assets/crests/akhmat.png?v=1794330000" alt="" width="32" height="32" class="crest">Ахмат</td><td class="num">14</td><td class="num">14</td><td><span class="tag w">1:0 Родина</span></td></tr>
+          <tr><td>12</td><td><img src="assets/crests/dynamo-mkh.png?v=1794330000" alt="" width="32" height="32" class="crest">Динамо Махачкала</td><td class="num">14</td><td class="num">13</td><td><span class="tag w">1:0 Балтика (г)</span></td></tr>
+          <tr><td class="dim">13</td><td><img src="assets/crests/rodina.png?v=1794330000" alt="" width="32" height="32" class="crest">Родина</td><td class="num">14</td><td class="num">12</td><td><span class="tag l">0:1 Ахмат (г)</span></td></tr>
+          <tr><td class="dim">14</td><td><img src="assets/crests/akron.png?v=1794330000" alt="" width="32" height="32" class="crest">Акрон</td><td class="num">14</td><td class="num">12</td><td><span class="tag l">1:2 Спартак (г)</span></td></tr>
+          <tr class="mine"><td class="hi">15</td><td><b><img src="assets/crests/lokomotiv.png?v=1794330000" alt="" width="32" height="32" class="crest">Локомотив</b></td><td class="num">14</td><td class="num">11</td><td><span class="tag l">0:1 Рубин</span></td></tr>
+          <tr><td class="dim">16</td><td><img src="assets/crests/fakel.png?v=1794330000" alt="" width="32" height="32" class="crest">Факел</td><td class="num">14</td><td class="num">6</td><td><span class="tag l">1:2 Динамо</span></td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p style="margin:10px 0 0;font-family:var(--ui);font-size:12px;color:var(--muted)">13–14 — зона стыковых матчей, 15–16 — зона вылета. (г) — в гостях.</p>
+    <div class="wire" style="margin-top:24px">
+      <div class="wire-item">
+        <div class="comp">15-й тур · пт 20 и сб 21 ноября</div>
+        <div class="line"><span><img src="assets/crests/rubin.png?v=1794330000" alt="" width="32" height="32" class="crest">Рубин — <img src="assets/crests/zenit.png?v=1794330000" alt="" width="32" height="32" class="crest">Зенит</span><span class="res">17:30</span></div>
+        <p class="note">20.11: <img src="assets/crests/rostov.png?v=1794330000" alt="" width="32" height="32" class="crest">Ростов — <img src="assets/crests/krylia.png?v=1794330000" alt="" width="32" height="32" class="crest">Крылья 19:30 · 21.11: <img src="assets/crests/orenburg.png?v=1794330000" alt="" width="32" height="32" class="crest">Оренбург — <img src="assets/crests/baltika.png?v=1794330000" alt="" width="32" height="32" class="crest">Балтика 13:00 · <img src="assets/crests/akron.png?v=1794330000" alt="" width="32" height="32" class="crest">Акрон — <img src="assets/crests/fakel.png?v=1794330000" alt="" width="32" height="32" class="crest">Факел 15:15 · <img src="assets/crests/cska.png?v=1794330000" alt="" width="32" height="32" class="crest">ЦСКА — <img src="assets/crests/akhmat.png?v=1794330000" alt="" width="32" height="32" class="crest">Ахмат 19:45</p>
+      </div>
+      <div class="wire-item">
+        <div class="comp">15-й тур · вс 22 ноября</div>
+        <div class="line"><span><img src="assets/crests/dynamo.png?v=1794330000" alt="" width="32" height="32" class="crest">Динамо — <img src="assets/crests/krasnodar.png?v=1794330000" alt="" width="32" height="32" class="crest">Краснодар</span><span class="res">14:00</span></div>
+        <p class="note"><img src="assets/crests/dynamo-mkh.png?v=1794330000" alt="" width="32" height="32" class="crest">Динамо Мх — <img src="assets/crests/spartak.png?v=1794330000" alt="" width="32" height="32" class="crest">Спартак 16:30 · <img src="assets/crests/rodina.png?v=1794330000" alt="" width="32" height="32" class="crest">Родина — <img src="assets/crests/lokomotiv.png?v=1794330000" alt="" width="32" height="32" class="crest">Локомотив 19:00</p>
+      </div>
+      <div class="wire-item">
+        <div class="comp">Сборная России · товарищеские</div>
+        <div class="line"><span><img src="assets/flags/uz.png?v=1794330000" alt="" class="flag" width="24" height="16">Узбекистан — <img src="assets/flags/ru.png?v=1794330000" alt="" class="flag" width="24" height="16">Россия</span><span class="res">12.11</span></div>
+        <p class="note">Ташкент, 18:00 МСК · 17 ноября: <img src="assets/flags/ru.png?v=1794330000" alt="" class="flag" width="24" height="16">Россия — <img src="assets/flags/ve.png?v=1794330000" alt="" class="flag" width="24" height="16">Венесуэла (Краснодар). Без Головина.</p>
       </div>
     </div>
   </section>
@@ -1187,30 +1341,33 @@
       </div>
     </div>
     <ul>
-      <li><a href="https://ria.ru/20261105/batrakov-2129524100.html" target="_blank" rel="noopener">РИА — Батраков в команде недели ЛЧ</a></li>
-      <li><a href="https://www.galatasaray.org/en/haber/football/aleksey-batrakov-shines/61316" target="_blank" rel="noopener">Galatasaray.org — исторические цифры дубля</a></li>
-      <li><a href="https://ria.ru/20261104/safonov--2129232707.html" target="_blank" rel="noopener">РИА — Сафонов о счёте «для тенниса»</a></li>
-      <li><a href="https://ria.ru/20261106/monako-2129566241.html" target="_blank" rel="noopener">РИА — «Монако» — <img src="assets/crests/nordsjaelland.png?v=1794062517" alt="" width="32" height="32" class="crest" loading="lazy">«Норшелланн», выход Головина</a></li>
-      <li><a href="https://ria.ru/20261106/zakharyan-2129810972.html" target="_blank" rel="noopener">РИА — Захарян возвращается в общую группу</a></li>
-      <li><a href="https://www.fclm.ru/news/n/lokomotiv-rubin-rpl-2026-27-match-summary/" target="_blank" rel="noopener">fclm.ru — отчёт «Локо» — <img src="assets/crests/rubin.png?v=1794062517" alt="" width="32" height="32" class="crest" loading="lazy">«Рубин»</a></li>
-      <li><a href="https://ria.ru/20261106/galaktionov-2129853138.html" target="_blank" rel="noopener">РИА — увольнение Галактионова</a></li>
-      <li><a href="https://www.lavoixdunord.fr/1752708/article/2026-11-06/jordan-morel-premier-de-cordee-les-notes-de-dunkerque-guingamp" target="_blank" rel="noopener">La Voix du Nord — оценки «Дюнкерк» — «Генгам»</a></li>
-      <li><a href="https://match.ru/player/egor-prutsev-281373/" target="_blank" rel="noopener">МАТЧ.РУ — статистика Пруцева</a></li>
-      <li><a href="https://metaratings.ru/news/raspisanie-matchei-rpl-na-7-noyabrya-2026-goda-669059/" target="_blank" rel="noopener">Metaratings — расписание 14-го тура РПЛ</a></li>
+      <li><a href="https://www.galatasaray.org/en/haber/football/galatasaray-4-3-amed-sf/61345" target="_blank" rel="noopener">Galatasaray.org — «Галатасарай» — «Амед» 4:3</a></li>
+      <li><a href="https://matchtv.ru/football/matchtvnews_NI2383981_Gol_Batrakova_pomog_Galatasaraju_obygrat_Amed_v_matche_tureckoj_Superligi" target="_blank" rel="noopener">Матч ТВ — гол Батракова, статистика</a></li>
+      <li><a href="https://www.sport-express.net/football/france/news/whoscored-i-sofascore-ocenili-igru-safonova-v-matche-pszh-trua-2472317/" target="_blank" rel="noopener">«Спорт-Экспресс» — оценки Сафонова</a></li>
+      <li><a href="https://www.sports.ru/football/1117429955-safonov-provel-dva-suxix-matcha-podryad-vpervye-v-etom-sezone.html" target="_blank" rel="noopener">Sports.ru — два сухих матча подряд</a></li>
+      <li><a href="https://www.sport-express.net/football/france/news/safonov-o-pobednoy-serii-pszh-kruto-takogo-ne-bylo-2472491/" target="_blank" rel="noopener">«Спорт-Экспресс» — Сафонов о серии «ПСЖ»</a></li>
+      <li><a href="https://ria.ru/20261108/golovin-2130167399.html" target="_blank" rel="noopener">РИА — Головин покинул поле прихрамывая</a></li>
+      <li><a href="https://www.sports.ru/football/1117431950-golovin-ne-sygraet-s-uzbekistanom-i-venesueloj-u-nego-travma-ikronozhn.html" target="_blank" rel="noopener">Sports.ru — Головин пропустит сборную</a></li>
+      <li><a href="https://www.vg.no/sport/i/GP1m4V/glimt-vant-skandalekamp-la-press-paa-viking-i-gullkampen" target="_blank" rel="noopener">VG — «Тромсё» — «Будё/Глимт»</a></li>
+      <li><a href="https://www.fotmob.com/players/625360/nikita-haikin" target="_blank" rel="noopener">FotMob — Хайкин, оценки</a></li>
+      <li><a href="https://norgetimes.com/eliteserien-2026/" target="_blank" rel="noopener">Norge Times — расклад и календарь Элитсериен</a></li>
+      <li><a href="https://ria.ru/20261108/futbol-2130163900.html" target="_blank" rel="noopener">РИА — «Сосьедад» — «Райо», Захарян в запасе</a></li>
+      <li><a href="https://ria.ru/20261108/futbol-2130058794.html" target="_blank" rel="noopener">РИА — «Нью-Йорк» — «Атланта» 3:0</a></li>
+      <li><a href="https://sportsuno.ru/news/golovin-poluchil-travmu-batrakov-i-safonov-v-udare-itogi-uik-enda-ross" target="_blank" rel="noopener">Sportsuno — итоги уик-энда легионеров</a></li>
+      <li><a href="https://sports.rik.cy/article/2026/11/7/ael-krasaba-enu-3-1-epistrophe-stis-nikes-me-triara-binteo/" target="_blank" rel="noopener">RIK Sports — АЕЛ — «Красава» 3:1</a></li>
+      <li><a href="https://www.sporta.ru/posts/2026/11/08/rotor-leningradets-1-1-volgogradtsy-zabili-na-90-4-no-pobedu-otobrala-ruka-troshechkina/" target="_blank" rel="noopener">Sporta.ru — «Ротор» — «Ленинградец» 1:1</a></li>
+      <li><a href="https://www.sport-express.net/football/rus_d1/news/rotor-leningradec-schet-i-rezultat-matcha-17-go-tura-pervoy-ligi-8-noyabrya-2026-2472543/" target="_blank" rel="noopener">«Спорт-Экспресс» — таблица ФНЛ</a></li>
+      <li><a href="https://metaratings.ru/blog/14-tur-rpl-rezultaty-obzor-matchei-turnirnaya-tablica-kak-sygrali-zenit-spartak-krasnodar/" target="_blank" rel="noopener">Metaratings — итоги 14-го тура РПЛ</a></li>
+      <li><a href="https://matchtv.ru/football/matchtvnews_NI2355117_RPL_utverdila_podrobnoje_raspisanije_matchej_do_konca_kalendarnogo_goda" target="_blank" rel="noopener">Матч ТВ — расписание РПЛ до конца года</a></li>
+      <li><a href="https://ria.ru/20260907/liga-chempionov-raspisanie-obschego-etapa-2114059014.html" target="_blank" rel="noopener">РИА — календарь общего этапа ЛЧ</a></li>
+      <li><a href="https://sportdaten.sportbild.bild.de/fussball/champions-league/se125038/2026-2027/ro327943/ligaphase/tabelle/" target="_blank" rel="noopener">Sport Bild — таблица ЛЧ после 4-го тура</a></li>
     </ul>
-    <p class="photo-credits">
-      Свежие кадры с новостных сайтов (личный дайджест). Без подписей на фото.
-      Батраков — Fanatik / RIA (команда недели ЛЧ).
-      Сафонов — RIA (комментарий после «Вильярреала»).
-      Головин — RIA (ЛК vs <img src="assets/crests/nordsjaelland.png?v=1794062517" alt="" width="32" height="32" class="crest" loading="lazy">«Норшелланн»).
-      Пиняев / «Локо» — RIA (матч с <img src="assets/crests/rubin.png?v=1794062517" alt="" width="32" height="32" class="crest" loading="lazy">«Рубином»).
-      Пруцев, Миранчук — архив выпуска / sports.ru.
-    </p>
+    <p class="photo-credits">Свежие кадры с новостных сайтов (личный дайджест), без подписей на фото: Батраков — Fanatik; Сафонов, Головин — Sports.ru; «Будё/Глимт» — TV 2; АЕЛ — «Красава» — RIK Sports. Эмблемы и логотипы — Wikipedia, флаги — flagcdn.</p>
   </section>
 </main>
 
 <footer class="colophon">
-  <div>Футбольный журнал · 4–7 ноября 2026</div>
+  <div>Футбольный журнал · 7–10 ноября 2026</div>
   <div>Онлайн-выпуск · для Никиты</div>
 </footer>
 
